@@ -39,8 +39,13 @@ The userstyles do the following:
 * Change the background color from an all-white to a light gray;
 * I think I changed the font to Arial and Helvetica, which offer better legibility because of font rendering issues in Firefox on Windows xp. Font changes are not widespread, so they're not applied everywhere.
 * Font size was changed on some UI elements to avoid the 2015/2016+ design disease of bigger text everywhere (presumably to appease people with large-resolution tablets).
-* Font size changes when hovering over a comment to better view font-based emoticons. But that hover feature may be a bit jarring. The emoticons themselves require the latest version of the Symbola font. I hear that font is free software, and available here: 
-http://users.teilar.gr/~g1951d/
+
+* Font size changes when hovering over a comment to better view font-based emoticons. But that hover feature may be a bit jarring.
+  * The emoticons themselves require the latest version of the Symbola font. 
+    I hear that font is free software, and available here:
+    http://users.teilar.gr/~g1951d/
+  * Open Sans Condensed Light is also used. It should be possible obtain the font from here:
+    https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans
 
 Some pre-requisites:
 * The styles are meant for use on Gecko-based browsers. These include Firefox, SeaMonkey, GNU IceCat, and Debian Iceweasel (of which most are typically running on Windows xp).
