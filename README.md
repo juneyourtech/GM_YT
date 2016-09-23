@@ -26,9 +26,10 @@ The userstyles do the following:
   narrower, especially if I wanted it side-by-side with another window. This 
   works well with wider screens.
   
-  I've also tried avoiding horizontal scrollbars.
+  With the design, I've tried to avoid the appearance of horizontal scrollbars.
   
-  The design is meant to be fluid, but avoids @media hooks.
+  The design is meant to be fluid and responsive, whilst for the most part 
+  avoiding @media hooks, which can be resource-intensive.
   (Though at some point, YouTube's own @media CSS kicks in when reducing window widths to much less than 1024px.)
 
 * Design: The search bar at the top is not fixed anymore and scrolls with the rest of the page, and thus won't take away screen real estate.
