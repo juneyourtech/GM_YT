@@ -4,6 +4,7 @@ This repository contains a userscript with userstyles for YouTube.
 I primarily refer to the userscript file as a userstyle, because I don't use 
 any scripting there.
 
+Purpose.
 The userstyles do the following:
 * Adjust the video viewing design for smaller displays, such as those with a 1024x768 resolution.
 
@@ -48,3 +49,7 @@ Rationale
   * Usability;
   * The possibility to include local styles.
   * The possibility to include comments in userstyles.
+
+A bit of legal stuff
+* All trademarks are the property of their respective owners.
+* I haven't decided on the license yet, because the userstyle locally changes the appearance of a proprietary website.
