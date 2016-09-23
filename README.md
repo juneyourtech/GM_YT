@@ -33,12 +33,13 @@ The userstyles do the following:
   (Though at some point, YouTube's own @media CSS kicks in when reducing window widths to much less than 1024px.)
 
 * Design: The search bar at the top is not fixed anymore and scrolls with the rest of the page, and thus won't take away screen real estate.
-* Specific font colour for links to viewed videos.
+* Specific font color for links to viewed videos.
   
-* Change the background colour from an all-white to a light gray;
+* Change the background color from an all-white to a light gray;
 * I think I changed the font to Arial and Helvetica, which offer better legibility because of font rendering issues in Firefox on Windows xp. Font changes are not widespread, so they're not applied everywhere.
 * Font size was changed on some UI elements to avoid the 2015/2016+ design disease of bigger text everywhere (presumably to appease people with large-resolution tablets).
-* Font size changes when hovering over a comment to better view font-based emoticons. The emoticons themselves require the latest version of the Symbola font. I hear that font is free software. But that hover feature may be a bit jarring.
+* Font size changes when hovering over a comment to better view font-based emoticons. But that hover feature may be a bit jarring. The emoticons themselves require the latest version of the Symbola font. I hear that font is free software, and available here: 
+http://users.teilar.gr/~g1951d/
 
 Some pre-requisites:
 * The styles are meant for use on Gecko-based browsers. These include Firefox, SeaMonkey, GNU IceCat, and Debian Iceweasel (of which most are typically running on Windows xp).
@@ -51,13 +52,15 @@ Code characteristics:
 Errata
 * Dead code still exists, because I created the styles for personal use, and haven't removed much anything from years past (2013+).
 * Some (interactive) notifications are not exactly visible. Sorry about that.
+* There's development-related CSS meant to adjust letter-spacing. You might see "long title" at the ends of long titles.
 
 Rationale
 * I created this repository, because I spread the userstyles to a couple other computers, and there needed to be a way to auto-update them when necessary.
-* Greasemonkey was chosen perhaps for the following reasons:
+
+Greasemonkey was chosen perhaps for the following reasons:
   * Historic purposes: When I needed custom CSS to change CSS for a webpage in an early version of Firefox, then the only add-on that worked, was Greasemonkey. Stylish worked in newer browser versions, and I really appreciate Stylish on Firefox and Icecat for mobile.
   * Usability;
-  * The possibility to include local styles.
+  * The possibility to easily apply styles locally;
   * The possibility to include comments in userstyles.
 
 A bit of legal stuff
