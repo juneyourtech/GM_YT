@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube
 // @namespace     YT
-// @description  Video site layout fix
+// @description  YouTube site layout improvements for monitors with smaller resolutions.
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
