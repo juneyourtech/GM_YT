@@ -34,6 +34,7 @@ The userstyles do the following:
 
 * Design: The search bar at the top is not fixed anymore and scrolls with the rest of the page, and thus won't take away screen real estate.
 * Specific font color for links to viewed videos.
+* The likes/dislikes bar shows red colour (default was blue).
   
 * Change the background color from an all-white to a light gray;
 * I think I changed the font to Arial and Helvetica, which offer better legibility because of font rendering issues in Firefox on Windows xp. Font changes are not widespread, so they're not applied everywhere.
