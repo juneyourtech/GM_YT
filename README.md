@@ -2,8 +2,12 @@
 
 This repository contains a userscript with userstyles for YouTube, 
 meant to be used with the Greasemonkey extension for Gecko-based browsers.
-These include Firefox, SeaMonkey, GNU IceCat, Debian Iceweasel, and others
-that are compatible.
+These browsers include Firefox, SeaMonkey, GNU IceCat, Debian Iceweasel, 
+and others that are compatible.
+
+For those not in the know, see
+https://en.wikipedia.org/wiki/Greasemonkey
+for a description on how this works.
 
 I primarily refer to the userscript file as a userstyle, because I don't use 
 actual scripting beyond applying CSS. My preference for Greasemonkey is 
