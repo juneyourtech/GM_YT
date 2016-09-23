@@ -45,7 +45,7 @@ The userstyles do the following:
     I hear that font is free software, and available here:
     http://users.teilar.gr/~g1951d/
   * Open Sans Condensed Light is also used. It should be possible obtain the font from here:
-    https://fonts.google.com/specimen/Open+Sans?selection.family=Open+Sans
+    https://fonts.google.com/specimen/Open+Sans+Condensed?selection.family=Open+Sans+Condensed:300
 
 Some pre-requisites:
 * The styles are meant for use on Gecko-based browsers. These include Firefox, SeaMonkey, GNU IceCat, and Debian Iceweasel (of which most are typically running on Windows xp).
