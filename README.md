@@ -1,8 +1,13 @@
 # GM_YT
 
-This repository contains a userscript with userstyles for YouTube.
+This repository contains a userscript with userstyles for YouTube, 
+meant to be used with the Greasemonkey extension for Gecko-based browsers.
+These include Firefox, SeaMonkey, GNU IceCat, Debian Iceweasel, and others
+that are compatible.
+
 I primarily refer to the userscript file as a userstyle, because I don't use 
-any scripting there.
+actual scripting beyond applying CSS. My preference for Greasemonkey is 
+described further below under the Rationale chapter.
 
 Purpose.
 The userstyles do the following:
@@ -51,5 +56,5 @@ Rationale
   * The possibility to include comments in userstyles.
 
 A bit of legal stuff
-* All trademarks are the property of their respective owners.
+* All trademarks are the property of their respective owners. No trademark or copyright infringement intended.
 * I haven't decided on the license yet, because the userstyle locally changes the appearance of a proprietary website.
