@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTube
 // @namespace     YT_lowerres
-// @description  YouTube site layout improvements for monitors with smaller resolutions.
+// @description  YouTube site layout improvements for displays with smaller resolutions.
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
 // @version 0.8.0
 // @include       *.youtube.com/*
