@@ -2,8 +2,9 @@
 // @name        GPlus
 // @namespace   GPlus
 // @description Google Plus font fix for long texts (Windows XP)
+// @updateURL https://github.com/martrootamm/GM_YT/raw/master/GPlus.user.js
 // @include     https://plus.google.com/*
-// @version     1
+// @version     0.1.0
 // @grant       GM_addStyle
 // ==/UserScript==
 // Notes:
