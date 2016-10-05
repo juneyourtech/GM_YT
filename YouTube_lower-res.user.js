@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  YouTube site layout improvements for displays with smaller resolutions (1024x768, 800x600).
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.0.1
+// @version 0.8.0.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -82,14 +82,21 @@ GM_addStyle("HTML.show-guide #appbar-guide-menu {margin-top:0px !important;}") /
 //The CONTENT area, which is so difficult to get to...
 GM_addStyle("div.watch7-playlist, div#watch7-video-container, div#watch7-video, div.watch7-playlist, div#watch7-main, div#watch7-main-container {margin-left:auto !important; margin-right:auto !important; background}") //padding-left:0px !important;
 
-GM_addStyle("div.site-left-aligned.guide-collapsed div#watch7-main-container {width:auto; min-width:928px;}") //This is ostensibly when the guide is collapsed...
-GM_addStyle("div#player, div#watch7-main, BODY.site-center-aligned #content, BODY.site-center-aligned .watch #content.content-alignment {width:auto; min-width:766px; max-width:1003px;}")
+//GM_addStyle("div.site-left-aligned.guide-collapsed div#watch7-main-container {width:auto; min-width:928px;}")
+//This is ostensibly when the guide is collapsed...
+//Commented out on 06.10.2016.
+
+GM_addStyle("div#player, div#watch7-main, BODY.site-center-aligned #content, BODY.site-center-aligned .watch #content.content-alignment {width:auto; min-width:784px; max-width:1003px;}")
 /* applies well when expanded, so from 780px to 640px... was 780, then 769, then 766 px by 21.12.2014. */
 //it was 150px for some reason; then min-width:926px;
+//06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
 
-GM_addStyle("BODY.site-center-aligned #player, BODY.site-center-aligned .watch #content.content-alignment, BODY.site-center-aligned #player.watch-small {width:auto; min-width:766px; max-width:1003px; margin-left:auto; margin-right:auto; background-color:inherit;}") //Note that min-width 838px is good for playlist; don't know about player yet, but could just as well be 780px //Feburary-March 2014: max-width was set to 1040px. //April 2014: min-width: 771px
-GM_addStyle("DIV.watch #content.content-alignment, DIV.watch.watch-non-stage-mode #player.content-alignment {min-width:766px; max-width:1003px;}")
+GM_addStyle("BODY.site-center-aligned #player, BODY.site-center-aligned .watch #content.content-alignment, BODY.site-center-aligned #player.watch-small {width:auto; min-width:784px; max-width:1003px; margin-left:auto; margin-right:auto; background-color:inherit;}") //Note that min-width 838px is good for playlist; don't know about player yet, but could just as well be 780px //Feburary-March 2014: max-width was set to 1040px. //April 2014: min-width: 771px
+//06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
+
+GM_addStyle("DIV.watch #content.content-alignment, DIV.watch.watch-non-stage-mode #player.content-alignment {min-width:784px; max-width:1003px;}")
 //November 2014: min-width 766px //Updated end Nove 2014. Original max-width is 1066px
+//06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
 
 GM_addStyle("div#player[CLASS='full-frame'] {min-width:100%; max-width:100%;}") //This applies to embeds
 
