@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  YouTube site layout improvements for displays with smaller resolutions.
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.0
+// @version 0.8.0.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -221,7 +221,11 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'], DIV#watch7-headlin
 GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.01em;}")
 /* 'rm' and 'rn' to make sure that the closeness of 'r' with either 'm' or 'n' won't cause people to misread it as a duble 'm' or 'n'. */
 
-GM_addStyle("DIV#watch7-headline h1 .long-title:after {display:inline-block; content:\'LONG TITLE\'; font-size:x-small; border:solid 1px maroon;}") //This shows if there's a long title. I need this to see if letter-spacing = -0.05em as set by default .long-title rule.
+//LONG TITLE
+//This shows if there's a long title. I need this to see if letter-spacing = -0.05em as set by default .long-title rule.
+//GM_addStyle("DIV#watch7-headline h1 .long-title:after {display:inline-block; content:\'LONG TITLE\'; font-size:x-small; border:solid 1px maroon;}")
+/* This declaration block should ideally moved to the dev version, and the current file is like a production version.
+   Of sorts. */
 
 //GM_addStyle("DIV#watch7-headline .yt-uix-expander-head {letter-spacing:-0.04em;}") //works, but is more generic and is not necessary either.
 
@@ -324,12 +328,13 @@ GM_addStyle("BODY.site-center-aligned #watch-sidebar-contents, DIV#watch7-sideba
 //GM_addStyle("div#watch7-sidebar .watch-sidebar-section {margin-left:0px;}") //Introduced 08.2014, commented out 22.11.2014
 
 //SIDEBAR ITEM
-GM_addStyle("LI[class~=video-list-item] {margin-bottom:7px; display:inline-block; width:98%; border:solid 1px white; border-left:none;}") //original was 5px for both (was that margin-bottom?) //06.2014
+GM_addStyle("LI[class~=video-list-item] {margin-bottom:7px; display:inline-block; width:98%; border:solid 1px white; border-left:none; overflow-x:hidden;}") //original was 5px for both (was that margin-bottom?) //06.2014
 //02.2015.: set margin-bottom to 7px from 10px.
 //02.2015.: Strangely enough, the width cannot be set to 100%.
 //01.09.2016.: Set width to 98% to avoid the scollbar. But something is not quite right there.
+//06.10.2016.: +overflow-x to avoid an early (?) horizontal scrollbar.
 
-//02.2015.: This :before is for a specific SIDEBAR ITEM, mainly for testing.
+//SIDEBAR ITEM/TEST: 02.2015.: This :before is for a specific SIDEBAR ITEM, mainly for testing.
 //GM_addStyle("div#watch7-sidebar-modules .autoplay-bar .watch-sidebar-head + div.watch-sidebar-body LI[class~=video-list-item]:before {content:\'---\'; display:block; font-size:0px; height:68px !important; width:120px; background-color:#409fff; float:left;}") //works
 //border:solid 1px red;
 
@@ -342,6 +347,7 @@ GM_addStyle("LI[class~=video-list-item]:before {content:\'---\'; display:block; 
 //new size for 08.2016: 168x94
 
 GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb {width:136px; height:76px;}}")
+/* Strangely, this cretes a horizontal scrollbar only when logged in. */
 
 //SIDEBAR LINK (A)
 GM_addStyle("LI[class~=video-list-item] A {display:block; min-width:95px; padding-left:0px; padding-right:1px; padding-bottom:0px;}") 
