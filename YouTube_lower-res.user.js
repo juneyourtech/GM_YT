@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  YouTube site layout improvements for displays with smaller resolutions (1024x768, 800x600).
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.0.3
+// @version 0.8.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -127,8 +127,19 @@ GM_addStyle("DIV.sb-card-arrow, DIV.sb-card-body-arrow {right:82px;}") //
 GM_addStyle("DIV.l4a {margin-right:0px; width:100%;}") //
 
 //SEARCH, etc
-GM_addStyle("DIV.yt-lockup-content H3.yt-lockup-title a {background-color:inherit; background:linear-gradient(to bottom, rgb(255, 255, 255) 0%, transparent 100%);}") //
+//SEARCH RESULT THUMB
+GM_addStyle("DIV.yt-lockup.yt-lockup-tile .yt-lockup-thumbnail {margin-right:0px;}")
+
+//SEARCH RESULT ITEM
+GM_addStyle("DIV.yt-lockup .yt-lockup-content {background:linear-gradient(to bottom, rgb(255, 255, 255) 0px, transparent 21px, transparent 100%); padding-left:7px;}")
+
+//LINK UNDERLINE ON ITEM HOVER
+GM_addStyle("DIV.yt-lockup .yt-lockup-content:hover H3.yt-lockup-title A {text-decoration:underline;}")
+
+//SEARCH RESULT ITEM LINK
+GM_addStyle("DIV.yt-lockup-content H3.yt-lockup-title a {background-color:inherit;}") //
 GM_addStyle("DIV.yt-lockup-content H3.yt-lockup-title a:visited {color:SlateBlue;}") //
+
 GM_addStyle("DIV.yt-ui-ellipsis {background-color:inherit; color:black;}") //
 
 //CHANNELS
