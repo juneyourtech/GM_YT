@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name          YouTube
+// @name          YouTube lower-res
 // @namespace     YT_lowerres
 // @description  YouTube site layout improvements for displays with smaller resolutions (1024x768, 800x600).
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
