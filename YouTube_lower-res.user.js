@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          YouTube Rez
 // @namespace     YT_lowerres
-// @description  Site layout improvements for displays with smaller resolutions (1024x768, 800x600).\\A (All trademarks are belong to their respective owners.)
+// @description  Site layout improvements for displays with smaller resolutions (1024x768, 800x600). (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.1.3.1
+// @version 0.8.1.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
