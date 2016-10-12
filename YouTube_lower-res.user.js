@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  YouTube site layout improvements for displays with smaller resolutions (1024x768, 800x600).
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.1
+// @version 0.8.1.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -127,6 +127,8 @@ GM_addStyle("DIV.sb-card-arrow, DIV.sb-card-body-arrow {right:82px;}") //
 GM_addStyle("DIV.l4a {margin-right:0px; width:100%;}") //
 
 //SEARCH, etc
+GM_addStyle("BODY.exp-responsive .search #content {width:auto; min-width:644px;}")
+
 //SEARCH RESULT THUMB
 GM_addStyle("DIV.yt-lockup.yt-lockup-tile .yt-lockup-thumbnail {margin-right:0px;}")
 
