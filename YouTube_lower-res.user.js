@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  YouTube site layout improvements for displays with smaller resolutions (1024x768, 800x600).
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.0.2
+// @version 0.8.0.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -107,8 +107,10 @@ GM_addStyle("DIV.yt-card {background-color:inherit;}")
 GM_addStyle("DIV.yt-card.yt-card-has-padding#action-panel-details {padding-top:0px; padding-left:11px;}") //Works.
 /* The DOM Inspector interprets it like this: DIV#action-panel-details.yt-card.yt-card-has-padding {} */
 
-GM_addStyle("DIV.individual-feed {background-color:white; margin-left:22px; margin-right:22px;}")
+GM_addStyle("DIV.individual-feed {background-color:transparent; margin-left:22px; margin-right:22px;}")
 //DIV.yt-card works, but aversely affects many other divs
+//background-color was set to white
+//12.10.2016: now transparent
 
 //PLUS NOTIFICATIONS (WRAPPER)
 GM_addStyle("HTML > BODY #sb-wrapper {min-width:699px;}") //766px so far...
