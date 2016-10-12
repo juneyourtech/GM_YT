@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          YouTube Rez
 // @namespace     YT_lowerres
-// @description  Site layout improvements for displays with smaller resolutions (1024x768, 800x600). (All trademarks are belong to their respective owners.)
+// @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600). (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.1.4
+// @version 0.8.1.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -11,11 +11,13 @@
 //   * is a wildcard character
 //   .tld is magic that matches all top-level domains (e.g. .com, .co.uk, .us, etc.)
 
-// CSS last updated on P., 24.03.2013. /Mus
-// File last updated on T., 02.04.2013. /Vi
-// Last updated from code on E., 02.09.2013 /via Vi
-// Updated from code on T., 03.09.2013 /via Mus
-// Updated R., 13.09.2013 or somesuch /via Mus
+// Earliest note on update:
+// CSS last updated on P., 24.03.2013. /secondary location
+// Other update dates:
+// T., 02.04.2013. primary location
+// E., 02.09.2013, from code via primary location
+// T., 03.09.2013, updated from code via secondary location
+// R., 13.09.2013 or somesuch, updated via secondary location
 // Major update to accommodate 01.2015 design.
 
 //BODY, FONTS
