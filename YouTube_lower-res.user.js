@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.1.6
+// @version 0.8.1.7
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -421,6 +421,9 @@ GM_addStyle("BODY[class~=exp-wn-big-thumbs] .related-list-item .content-link {mi
 GM_addStyle("LI.related-list-item .content-link {min-height:unset;}") //25.08.2016
 
 GM_addStyle("LI[class~=related-list-item] .thumb-wrapper {top:0px; left:0px; margin-left:0px; margin-right:0px;}") //02.2015. margin-right is of little consequence
+
+//VIDEO LINK SETTING / RELATED LIST ITEM ACTION MENU BACKROUND set to white for better targeting
+GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-color:rgba(255,255,255,0.85);}") //13.10.2016
 
 //normal mode (aligned) //Set margins here to put into the middle of the page
 GM_addStyle(".site-left-aligned #page.watch, .site-left-aligned #page.watch #guide, .site-left-aligned #watch7-playlist-container .watch7-playlist, .site-left-aligned #watch7-playlist, .site-left-aligned #watch7-video-container #watch7-video, div.site-left-aligned #watch7-main-container #watch7-main {margin-left:auto !important; margin-right:auto !important; padding-left:0px;}") //06.2014 //Padding-left  should be 0. Seems to work :-) 
