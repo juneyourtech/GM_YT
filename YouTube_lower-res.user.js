@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.1.7
+// @version 0.8.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -424,6 +424,17 @@ GM_addStyle("LI[class~=related-list-item] .thumb-wrapper {top:0px; left:0px; mar
 
 //VIDEO LINK SETTING / RELATED LIST ITEM ACTION MENU BACKROUND set to white for better targeting
 GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-color:rgba(255,255,255,0.85);}") //13.10.2016
+
+//UNDO 'NOT INTERESTED'. Added 13.10.2016.
+GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}") //defaults to top at absolute position
+
+GM_addStyle("BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {height:auto; min-height:92px; margin-left:169px;}")
+
+GM_addStyle("@media only screen and (max-width:893px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {margin-left:0px; width:168px;}}") //871px, but add 22px (for some reason)
+
+GM_addStyle("@media only screen and (max-width:832px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {min-height:74px; width:136px;}}")
+
+GM_addStyle("BODY.exp-wn-big-thumbs .replace-enclosing-action-message {padding-top:0px;}")
 
 //normal mode (aligned) //Set margins here to put into the middle of the page
 GM_addStyle(".site-left-aligned #page.watch, .site-left-aligned #page.watch #guide, .site-left-aligned #watch7-playlist-container .watch7-playlist, .site-left-aligned #watch7-playlist, .site-left-aligned #watch7-video-container #watch7-video, div.site-left-aligned #watch7-main-container #watch7-main {margin-left:auto !important; margin-right:auto !important; padding-left:0px;}") //06.2014 //Padding-left  should be 0. Seems to work :-) 
