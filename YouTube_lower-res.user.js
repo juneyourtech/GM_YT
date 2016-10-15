@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.3.1
+// @version 0.8.3.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -268,11 +268,10 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.
 GM_addStyle("DIV#watch7-headline.yt-uix-expander-collapsed h1, DIV#watch7-headline.yt-uix-expander h1 {margin-right:107px;}") //works for first item,
 
 //TRENDING (video popularity) status | Section added 15.10.2016
-GM_addStyle("SPAN.standalone-collection-badge-renderer-text {position:absolute; top:55px; right:160px; z-index:1;}")
+GM_addStyle("SPAN.standalone-collection-badge-renderer-text {position:absolute; bottom:-43px; right:0px; z-index:1;}")
 GM_addStyle("SPAN.standalone-collection-badge-renderer-text A {margin-right:5px; background-color:transparent; padding:0px; color:#555;}")
-//Trending notification moved below video count and ratings.
-/* I might reconsider absolute positioning and use margins, if dependence on top 
-   continues misbehaving. Another option is to use bottom instead. */
+//Trending notification moved below video count and ratings, depends on bottom.
+/* Options: right:165px; bottom:-12px
 
 /* ____80_character_separator________________________________________________ */
 
