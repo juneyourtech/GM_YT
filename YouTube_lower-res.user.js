@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.3.2
+// @version 0.8.3.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -139,7 +139,11 @@ GM_addStyle("BODY.exp-responsive .search #content {width:auto; min-width:644px;}
 GM_addStyle("DIV.yt-lockup.yt-lockup-tile .yt-lockup-thumbnail {margin-right:0px;}")
 
 //SEARCH RESULT ITEM
-GM_addStyle("DIV.yt-lockup .yt-lockup-content {background:linear-gradient(to bottom, rgb(255, 255, 255) 0px, transparent 21px, transparent 100%); padding-left:7px;}")
+GM_addStyle("DIV.yt-lockup .yt-lockup-content {background:linear-gradient(to bottom, rgb(255, 255, 255) 0px, transparent 21px, transparent 100%); padding-left:2px;}")
+//15.10.2016: padding-left:2px (from 7px), b/c .yt-lockup-content is used often.
+
+GM_addStyle("DIV.yt-lockup.yt-lockup-tile .yt-lockup-content {padding-left:7px;}")
+//15.10.2016: separate padding for tiled search results only.
 
 //LINK UNDERLINE ON ITEM HOVER
 GM_addStyle("DIV.yt-lockup .yt-lockup-content:hover H3.yt-lockup-title A {text-decoration:underline;}")
