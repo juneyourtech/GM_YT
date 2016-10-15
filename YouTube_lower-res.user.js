@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.2
+// @version 0.8.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -25,7 +25,7 @@
 
 GM_addStyle("HTML BODY, HTML input, HTML button, HTML textarea, HTML select {font-family:Arial,sans-serif,Roboto;}") //
 
-GM_addStyle("HTML > BODY, HTML input, HTML button, HTML textarea, HTML select {font-family:Arial,sans-serif,Roboto;}") //
+GM_addStyle("HTML > BODY {font-family:Arial,sans-serif,Roboto;}") //
 
 //TOP
 GM_addStyle("DIV#yt-masthead-container {min-width:640px !important;}") //min-width:1003
@@ -35,6 +35,10 @@ GM_addStyle("DIV#masthead-positioner {position:absolute;}")
 GM_addStyle("DIV#yt-masthead-content {min-width:284px;}")
 GM_addStyle("FORM#masthead-search {min-width:132px;}")
 GM_addStyle("DIV#masthead-search-terms {min-width:66px !important;}")
+
+//NOTIFICATIONS (as in playlist additions) //Section added 15.10.2016
+GM_addStyle("DIV#appbar-main-guide-notification-container {top:0px; left:201px;}")
+//Overlayed across the search bar
 
 //ALERTS
 GM_addStyle("div#alerts {width:auto !important; min-width:480px !important; max-width:988px !important;}")
@@ -222,7 +226,8 @@ GM_addStyle("BUTTON.yt-uix-button-playlist-remove-item {margin-right:0px; margin
 GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:0px; min-height:130px; background-color:inherit;}")
 
 //TITLE
-GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:150px}")
+GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:150px; position:relative;}")
+//15.10.2016: added position:relative to allow absolute positioning of trending notifications
 
 GM_addStyle("DIV#watch7-headline h1 {font-family:\'Arial\',\'Roboto\',\'sans-serif\';}") //
 
@@ -234,6 +239,7 @@ GM_addStyle("DIV#watch7-headline h1 {font-family:\'Arial\',\'Roboto\',\'sans-ser
 //GM_addStyle("DIV#watch7-headline H1:hover > SPAN:after {content:\'Clicking on the title has caused NoScript to alert about a possible XSS attempt.\'; display:block; position:relative; font-size:x-small;}")
 /* 19.03.2016: Turns out, that this was caused by NoScript. */
 
+//TITLE LETTER-SPACING (for Arial font)
 //GM_addStyle("DIV#watch7-headline h1 .long-title {letter-spacing:-0.04em;}") //Works for all .long-title selectors
 GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='ll'], DIV#watch7-headline h1 .long-title[TITLE*='õn'], DIV#watch7-headline h1 .long-title[TITLE*='ne'], DIV#watch7-headline h1 .long-title[TITLE*='le'], DIV#watch7-headline h1 .long-title[TITLE*='ol'], DIV#watch7-headline h1 .long-title[TITLE*='on'], DIV#watch7-headline h1 .long-title[TITLE*='öl'] {letter-spacing:-0.04em;}") //WORKS! - default -0.05em
 
@@ -245,15 +251,28 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'], DIV#watch7-headlin
 GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.01em;}")
 /* 'rm' and 'rn' to make sure that the closeness of 'r' with either 'm' or 'n' won't cause people to misread it as a duble 'm' or 'n'. */
 
-//LONG TITLE
-//This shows if there's a long title. I need this to see if letter-spacing = -0.05em as set by default .long-title rule.
+//LONG TITLE :after pseudo-element
+/* This shows if there's a long title. I need this to see if 
+   letter-spacing:-0.05em as set by default .long-title rule. */
 //GM_addStyle("DIV#watch7-headline h1 .long-title:after {display:inline-block; content:\'LONG TITLE\'; font-size:x-small; border:solid 1px maroon;}")
-/* This declaration block should ideally moved to the dev version, and the current file is like a production version.
+/* ^ The above rule should ideally moved to the future development version of 
+   the userstyle, as the current file is now like a production version. 
    Of sorts. */
 
-//GM_addStyle("DIV#watch7-headline .yt-uix-expander-head {letter-spacing:-0.04em;}") //works, but is more generic and is not necessary either.
+//GM_addStyle("DIV#watch7-headline .yt-uix-expander-head {letter-spacing:-0.04em;}")
+//works, but is more generic and is not necessary either.
 
+/* ____80_character_separator________________________________________________ */
+
+/* Comment added 15.10.2016: Because the view count and ratings are absolutely 
+   positioned, the title is given a right margin to avoid overlap into one 
+   another. */
 GM_addStyle("DIV#watch7-headline.yt-uix-expander-collapsed h1, DIV#watch7-headline.yt-uix-expander h1 {margin-right:107px;}") //works for first item,
+
+//TRENDING (video popularity) status | Section added 15.10.2016
+GM_addStyle("SPAN.standalone-collection-badge-renderer-text {position:absolute; top:53px; right:0px; z-index:1;}")
+GM_addStyle("SPAN.standalone-collection-badge-renderer-text A {margin-right:5px; background-color:transparent; padding:0px; color:#555;}")
+//Trending notification moved below video count and ratings.
 
 //USER INFO (NAME)
 GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, rgb(241, 241, 241) 53px, white 0%, rgb(241, 241, 241) 100%);}")
