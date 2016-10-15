@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.3
+// @version 0.8.3.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -262,17 +262,19 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.
 //GM_addStyle("DIV#watch7-headline .yt-uix-expander-head {letter-spacing:-0.04em;}")
 //works, but is more generic and is not necessary either.
 
-/* ____80_character_separator________________________________________________ */
-
 /* Comment added 15.10.2016: Because the view count and ratings are absolutely 
    positioned, the title is given a right margin to avoid overlap into one 
    another. */
 GM_addStyle("DIV#watch7-headline.yt-uix-expander-collapsed h1, DIV#watch7-headline.yt-uix-expander h1 {margin-right:107px;}") //works for first item,
 
 //TRENDING (video popularity) status | Section added 15.10.2016
-GM_addStyle("SPAN.standalone-collection-badge-renderer-text {position:absolute; top:53px; right:0px; z-index:1;}")
+GM_addStyle("SPAN.standalone-collection-badge-renderer-text {position:absolute; top:55px; right:160px; z-index:1;}")
 GM_addStyle("SPAN.standalone-collection-badge-renderer-text A {margin-right:5px; background-color:transparent; padding:0px; color:#555;}")
 //Trending notification moved below video count and ratings.
+/* I might reconsider absolute positioning and use margins, if dependence on top 
+   continues misbehaving. Another option is to use bottom instead. */
+
+/* ____80_character_separator________________________________________________ */
 
 //USER INFO (NAME)
 GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, rgb(241, 241, 241) 53px, white 0%, rgb(241, 241, 241) 100%);}")
