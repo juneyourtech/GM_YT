@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.3.4
+// @version 0.8.3.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -50,7 +50,8 @@ playlists, but don't know if yet in plain form. */
 //February 2014: original max-width was set to 1040 px.
 
 //FRONTPAGE (added 17.10.2016)
-GM_addStyle("@media only screen and (max-width:910px) {BODY.exp-responsive .home #content {width:auto; min-width:240px; max-width:644px;}}")
+GM_addStyle("@media only screen and (max-width:910px) {BODY.exp-responsive .home #content {width:100%; min-width:240px; max-width:unset;}}")
+//min-width:240px; max-width:644px;
 
 //GUIDE horizontal strip (September 2013)
 GM_addStyle("BODY.site-center-aligned .yt-base-gutter {min-width:640px;}") //max-width doesn't seem to be specified, so original min-width:1003px.
