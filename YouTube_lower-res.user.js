@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.3.3
+// @version 0.8.3.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -48,6 +48,9 @@ GM_addStyle("BODY.site-center-aligned #alerts, BODY.site-center-aligned #content
 /* min-width:780px was the previous appliccable value. It applies well with 
 playlists, but don't know if yet in plain form. */
 //February 2014: original max-width was set to 1040 px.
+
+//FRONTPAGE (added 17.10.2016)
+GM_addStyle("@media only screen and (max-width:910px) {BODY.exp-responsive .home #content {width:auto; min-width:240px; max-width:644px;}}")
 
 //GUIDE horizontal strip (September 2013)
 GM_addStyle("BODY.site-center-aligned .yt-base-gutter {min-width:640px;}") //max-width doesn't seem to be specified, so original min-width:1003px.
@@ -449,10 +452,13 @@ GM_addStyle("LI[class~=related-list-item] .thumb-wrapper {top:0px; left:0px; mar
 //VIDEO LINK SETTING / RELATED LIST ITEM ACTION MENU BACKROUND set to white for better targeting
 GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-color:rgba(255,255,255,0.85);}") //13.10.2016
 
-//UNDO 'NOT INTERESTED'. Added 13.10.2016.
+//UNDO 'NOT INTERESTED'. Added 13.10.2016. | All this requires a logged-in state.
 GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}") //defaults to top at absolute position
 
 GM_addStyle("BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {height:auto; min-height:92px; margin-left:169px;}")
+
+//17.10.2016: Fix for 'undo recommendation' issues on frontpage
+GM_addStyle("BODY.exp-wn-big-thumbs DIV.yt-lockup.yt-lockup-grid .service-endpoint-replace-enclosing-action-notification {margin-left:0px;}")
 
 GM_addStyle("@media only screen and (max-width:893px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {margin-left:0px; width:168px;}}") //871px, but add 22px (for some reason)
 
