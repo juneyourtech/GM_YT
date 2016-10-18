@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.5
+// @version 0.8.5.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -250,6 +250,9 @@ GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:
 //TITLE
 GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:150px; position:relative;}")
 //15.10.2016: added position:relative to allow absolute positioning of trending notifications
+
+GM_addStyle("DIV#watch7-headline H1 {width:unset;}") //original: 75%.
+//18.10.2016.: unset
 
 //GM_addStyle("DIV#watch7-headline h1:hover {background:linear-gradient(to right, rgb(244, 164, 96) 0px, rgb(241, 241, 241) 100%);}")
 //255,127,80 = Coral
