@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.5.1
+// @version 0.8.5.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -31,8 +31,6 @@ GM_addStyle("HTML > BODY, DIV#watch7-headline H1 {color:black;}")
 /* In particular, this affects BODY directly, but also TITLE and comment text.
    With HTML &gt; BODY, the black color only applies to the actual site, but not 
    video embeds, which very likely use other colors, such as white on black. */
-
-/* ____80_character_separator________________________________________________ */
 
 //TOP
 GM_addStyle("DIV#yt-masthead-container {min-width:640px !important;}") //min-width:1003
@@ -467,14 +465,28 @@ GM_addStyle("LI[class~=related-list-item] .thumb-wrapper {top:0px; left:0px; mar
 GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-color:rgba(255,255,255,0.85);}") //13.10.2016
 
 //UNDO 'NOT INTERESTED'. Added 13.10.2016. | All this requires a logged-in state.
-GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}") //defaults to top at absolute position
+GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}")
+//defaults to top at absolute position
 
 GM_addStyle("BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {height:auto; min-height:92px; margin-left:169px;}")
 
-//17.10.2016: Fix for 'undo recommendation' issues on frontpage
+//17.10.2016: Fix for 'undo recommendation' issues on frontpage (grid)
 GM_addStyle("BODY.exp-wn-big-thumbs DIV.yt-lockup.yt-lockup-grid .service-endpoint-replace-enclosing-action-notification {margin-left:0px;}")
 
-GM_addStyle("@media only screen and (max-width:893px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {margin-left:0px; width:168px;}}") //871px, but add 22px (for some reason)
+/* ____80_character_separator________________________________________________ */
+
+/* The following two rules depend on viewport width and the language set for the 
+   page. The first rule is global. */
+GM_addStyle("@media only screen and (max-width:915px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {margin-left:0px; width:168px;}}") //18.10.2016
+/* Setting for Estonian and other languages in the UI: 895+22=917px, 
+   reduced to 915px */
+
+GM_addStyle("@media only screen and (max-width:893px) {HTML:lang(en) > BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {margin-left:0px; width:168px;}}") //17.10.2016
+/* 18.10.2016: Added HTML:lang(en) to accommodate the English-language UI.
+   The alternative is HTML[lang=|"en"] ; The pipe is responsible for 
+   hyphen-separated values beginning with en (en-us, etc).
+   This assumes, that en is actually used by default. */
+//With en, viewport width is 871px, but add 22px (for some reason)
 
 GM_addStyle("@media only screen and (max-width:832px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {min-height:74px; width:136px;}}")
 
