@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.4.2
+// @version 0.8.4.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -33,7 +33,7 @@ GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //m
 GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
 
 GM_addStyle("DIV#masthead-positioner {position:absolute;}")
-//18.10.2016: Was previously set to absolute before then.
+//18.10.2016: Was then temporarily set to relative.
 //This affects the frontpage either way.
 
 GM_addStyle("DIV#masthead-positioner-height-offset {height:90px;}") //original: 90px
