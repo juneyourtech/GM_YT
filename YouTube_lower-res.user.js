@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.4
+// @version 0.8.4.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -23,15 +23,22 @@
 //BODY, FONTS
 //GM_addStyle("HTML BODY.exp-roboto, HTML .exp-roboto button, HTML .exp-roboto input, HTML .exp-roboto textarea, HTML .exp-roboto select {font-family:Arial,sans-serif; }") //
 
-GM_addStyle("HTML BODY, HTML input, HTML button, HTML textarea, HTML select {font-family:Arial,sans-serif,Roboto;}") //
+GM_addStyle("HTML BODY, HTML input, HTML button, HTML textarea, HTML select {font-family:Arial,Helvetica,Helv,sans-serif,Roboto;}") //
 
-GM_addStyle("HTML > BODY {font-family:Arial,sans-serif,Roboto;}") //
+GM_addStyle("HTML > BODY {font-family:Arial,Helvetica,Helv,sans-serif,Roboto;}") //
 
 //TOP
 GM_addStyle("DIV#yt-masthead-container {min-width:640px !important;}") //min-width:1003
 GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
 GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
-GM_addStyle("DIV#masthead-positioner {position:absolute;}")
+
+GM_addStyle("DIV#masthead-positioner {position:relative;}")
+//18.10.2016: was previously set to absolute before then
+//affects the frontpage
+
+GM_addStyle("DIV#masthead-positioner-height-offset {height:5px;}") //original: 90px
+//affects the frontpage; set to 5px to see if there is any content visible.
+
 GM_addStyle("DIV#yt-masthead-content {min-width:284px;}")
 GM_addStyle("FORM#masthead-search {min-width:132px;}")
 GM_addStyle("DIV#masthead-search-terms {min-width:66px !important;}")
