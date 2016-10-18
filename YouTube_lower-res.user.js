@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.4.4
+// @version 0.8.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -23,13 +23,19 @@
 //BODY, FONTS
 //GM_addStyle("HTML BODY.exp-roboto, HTML .exp-roboto button, HTML .exp-roboto input, HTML .exp-roboto textarea, HTML .exp-roboto select {font-family:Arial,sans-serif; }") //
 
-GM_addStyle("HTML BODY, HTML input, HTML button, HTML textarea, HTML select {font-family:Arial,Helvetica,Helv,sans-serif,Roboto;}") //
+GM_addStyle("HTML BODY, HTML > BODY, HTML INPUT, HTML BUTTON, HTML TEXTAREA, HTML SELECT {font-family:Arial,Helvetica,Helv,sans-serif,Roboto;}")
+//This affects BODY anywhere in the document. I might consider consolidating this.
 
-GM_addStyle("HTML > BODY {font-family:Arial,Helvetica,Helv,sans-serif,Roboto;}") //
+GM_addStyle("HTML > BODY, DIV#watch7-headline H1 {color:black;}")
+//18.10.2016: Consolidated HTML &gt; BODY and headline here. Fonts now inherited from above.
+/* In particular, this affects BODY directly, but also TITLE and comment text.
+   With HTML &gt; BODY, the black color only applies to the actual site, but not 
+   video embeds, which very likely use other colors, such as white on black. */
+
+/* ____80_character_separator________________________________________________ */
 
 //TOP
 GM_addStyle("DIV#yt-masthead-container {min-width:640px !important;}") //min-width:1003
-GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
 GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
 
 GM_addStyle("DIV#masthead-positioner {position:absolute;}")
@@ -54,8 +60,8 @@ GM_addStyle("div#alerts {width:auto !important; min-width:480px !important; max-
 //Alerts New style (as of 10.2013)
 GM_addStyle("BODY.site-center-aligned #alerts, BODY.site-center-aligned #content, BODY.site-center-aligned.appbar-old-pl #player {width:auto; min-width:770px; max-width: 1003px;}")
 /* min-width:780px was the previous appliccable value. It applies well with 
-playlists, but don't know if yet in plain form. */
-//February 2014: original max-width was set to 1040 px.
+   playlists, but don't know if yet in plain form. */
+// February 2014: original max-width was set to 1040 px.
 
 //FRONTPAGE (added 17.10.2016)
 GM_addStyle("@media only screen and (max-width:910px) {BODY.exp-responsive .home #content {width:100%; min-width:240px; max-width:unset;}}")
@@ -64,8 +70,8 @@ GM_addStyle("@media only screen and (max-width:910px) {BODY.exp-responsive .home
 //GUIDE horizontal strip (September 2013)
 GM_addStyle("BODY.site-center-aligned .yt-base-gutter {min-width:640px;}") //max-width doesn't seem to be specified, so original min-width:1003px.
 /* BODY.site-center-aligned.flex-width-enabled #content is of secondary 
-consideration, but I've included it anyway.
-• 05.03.2014: Where? ^ */
+   consideration, but I've included it anyway.
+   • 05.03.2014: Where? ^ */
 
 //off the top area: Guide (old)
 GM_addStyle("DIV#guide {width:auto !important; max-width:160px !important;}")
@@ -245,8 +251,6 @@ GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:
 GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:150px; position:relative;}")
 //15.10.2016: added position:relative to allow absolute positioning of trending notifications
 
-GM_addStyle("DIV#watch7-headline h1 {font-family:\'Arial\',\'Roboto\',\'sans-serif\';}") //
-
 //GM_addStyle("DIV#watch7-headline h1:hover {background:linear-gradient(to right, rgb(244, 164, 96) 0px, rgb(241, 241, 241) 100%);}")
 //255,127,80 = Coral
 //255 218 185 PeachPuff
@@ -286,10 +290,8 @@ GM_addStyle("DIV#watch7-headline.yt-uix-expander-collapsed h1, DIV#watch7-headli
 //TRENDING (video popularity) status | Section added 15.10.2016
 GM_addStyle("SPAN.standalone-collection-badge-renderer-text {position:absolute; bottom:-43px; right:0px; z-index:1;}")
 GM_addStyle("SPAN.standalone-collection-badge-renderer-text A {margin-right:5px; background-color:transparent; padding:0px; color:#555;}")
-//Trending notification moved below video count and ratings, depends on bottom.
-/* Options: right:165px; bottom:-12px
-
-/* ____80_character_separator________________________________________________ */
+/* Trending notification moved below video count and ratings, depends on bottom.
+   Options: right:165px; bottom:-12px */
 
 //USER INFO (NAME)
 GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, rgb(241, 241, 241) 53px, white 0%, rgb(241, 241, 241) 100%);}")
