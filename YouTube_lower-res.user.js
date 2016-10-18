@@ -252,7 +252,7 @@ GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:
 //15.10.2016: added position:relative to allow absolute positioning of trending notifications
 
 GM_addStyle("DIV#watch7-headline H1 {width:unset;}") //original: 75%.
-//18.10.2016.: unset
+//18.10.2016.: unset. This may cause overlap w/ very large view counts.
 
 //GM_addStyle("DIV#watch7-headline h1:hover {background:linear-gradient(to right, rgb(244, 164, 96) 0px, rgb(241, 241, 241) 100%);}")
 //255,127,80 = Coral
