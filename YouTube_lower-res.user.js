@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.4.1
+// @version 0.8.4.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -32,12 +32,12 @@ GM_addStyle("DIV#yt-masthead-container {min-width:640px !important;}") //min-wid
 GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
 GM_addStyle("DIV#masthead-expanded-container {min-width:688px !important;}") //min-width:1003
 
-GM_addStyle("DIV#masthead-positioner {position:relative;}")
-//18.10.2016: was previously set to absolute before then
-//affects the frontpage
+GM_addStyle("DIV#masthead-positioner {position:absolute;}")
+//18.10.2016: Was previously set to absolute before then.
+//This affects the frontpage either way.
 
-GM_addStyle("DIV#masthead-positioner-height-offset {height:5px;}") //original: 90px
-//affects the frontpage; set to 5px to see if there is any content visible.
+GM_addStyle("DIV#masthead-positioner-height-offset {height:90px;}") //original: 90px
+//This affects the frontpage. Setting it to 5px does not quite work.
 
 GM_addStyle("DIV#yt-masthead-content {min-width:284px;}")
 GM_addStyle("FORM#masthead-search {min-width:132px;}")
