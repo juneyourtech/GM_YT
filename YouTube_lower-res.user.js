@@ -36,8 +36,9 @@ GM_addStyle("DIV#masthead-positioner {position:absolute;}")
 //18.10.2016: Was then temporarily set to relative.
 //This affects the frontpage either way.
 
-GM_addStyle("DIV#masthead-positioner-height-offset {height:90px;}") //original: 90px
+GM_addStyle("DIV#masthead-positioner-height-offset {height:73px;}") //original: 90px
 //This affects the frontpage. Setting it to 5px does not quite work.
+//73px. seems like a good compromise, at least for the front page.
 
 GM_addStyle("DIV#yt-masthead-content {min-width:284px;}")
 GM_addStyle("FORM#masthead-search {min-width:132px;}")
