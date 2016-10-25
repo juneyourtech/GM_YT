@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.5.3
+// @version 0.8.5.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -40,10 +40,16 @@ GM_addStyle("DIV#masthead-positioner {position:absolute;}")
 //18.10.2016: Was then temporarily set to relative.
 //This affects the frontpage either way.
 
-GM_addStyle("DIV#masthead-positioner-height-offset {height:73px !important;}") //original: 90px
-/* 18.10.2016: This affects the frontpage. Setting it to 5px does not quite work.
-   73px. seems like a good compromise, at least for the front page. */
-// 25.10.2016. Added !important, b/c manual style height is added into the element.
+GM_addStyle("DIV#masthead-positioner-height-offset {height:73px;}") //original: 90px
+/* 18.10.2016: This affects the frontpage and other non-player areas.
+   Setting it to 5px does not quite work.
+   73px seems like a good compromise, at least for the front page. */
+
+/* ____80_character_separator________________________________________________ */
+
+GM_addStyle("BODY.appbar-hidden #masthead-positioner-height-offset {height:50px !important;}")
+/* 25.10.2016.: Added this _and_ with !important, because at some point, manual
+   style height is added into the element. Mostly affects the player UI. */
 
 GM_addStyle("DIV#yt-masthead-content {min-width:284px;}")
 GM_addStyle("FORM#masthead-search {min-width:132px;}")
@@ -473,8 +479,6 @@ GM_addStyle("BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-n
 
 //17.10.2016: Fix for 'undo recommendation' issues on frontpage (grid)
 GM_addStyle("BODY.exp-wn-big-thumbs DIV.yt-lockup.yt-lockup-grid .service-endpoint-replace-enclosing-action-notification {margin-left:0px;}")
-
-/* ____80_character_separator________________________________________________ */
 
 /* The following two rules depend on viewport width and the language set for the 
    page. The first rule is global. */
