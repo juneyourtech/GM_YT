@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/martrootamm/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.5.4
+// @version 0.8.5.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -44,8 +44,6 @@ GM_addStyle("DIV#masthead-positioner-height-offset {height:73px;}") //original: 
 /* 18.10.2016: This affects the frontpage and other non-player areas.
    Setting it to 5px does not quite work.
    73px seems like a good compromise, at least for the front page. */
-
-/* ____80_character_separator________________________________________________ */
 
 GM_addStyle("BODY.appbar-hidden #masthead-positioner-height-offset {height:50px !important;}")
 /* 25.10.2016.: Added this _and_ with !important, because at some point, manual
@@ -236,7 +234,11 @@ GM_addStyle("OL#watch7-playlist-tray .video-list-item .title {display:inline; wi
 video suggestion list, that also includes the following :before statement */
 
 //Added 28.11.2015.
-GM_addStyle("DIV#player-playlist .playlist-video-description {top:0px; width:auto; min-width:120px;}") //top:0px is to align text with the top side of thethumbnail. Min-width sets the text to reflow below the thumbnail, if viewport width is small.
+GM_addStyle("DIV#player-playlist .playlist-video-description {top:0px; width:auto; min-width:120px;}")
+/* top:0px is to align text with the top side of thethumbnail. Min-width sets 
+   the text to reflow below the thumbnail, if viewport width is small. */
+
+/* ____80_character_separator________________________________________________ */
 
 //PLAYLIST ITEM TITLE PREFIX MARGIN
 //GM_addStyle("OL#watch7-playlist-tray .video-list-item .title:before {display:block; content:\'---\'; font-size:0px; height:1px; width:10px; margin-left:72px; border:none; background-color:blue;}") //works as block, but not as inline-block, if it's prefixed to inline text to allow it to have 1px padding. Because it's a block, it's somehow put out of normal flow and requires margin-left... I had set the original width to 25px.
@@ -248,6 +250,9 @@ GM_addStyle("BUTTON.yt-uix-button-playlist-remove-item {margin-right:0px; margin
 • possible background:linear-gradient(to left, rgb(128, 0, 0) 0%, transparent 100%) — maroon to transparent
 • linear-gradient(to left, rgb(0, 0, 0) 0%, transparent 100%) — IN USE */
 //GM_addStyle(" ")
+
+//#VIDEO: NOTIFICATIONS //30.10.2016
+GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:6px;}")
 
 //#VIDEO: TITLE BELOW
 GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:0px; min-height:130px; background-color:inherit;}")
