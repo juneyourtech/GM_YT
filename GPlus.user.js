@@ -4,7 +4,7 @@
 // @description Google Plus font fix for long texts (Windows XP)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/GPlus.user.js
 // @include     https://plus.google.com/*
-// @version     0.1.1
+// @version     0.1.1.1
 // @grant       GM_addStyle
 // ==/UserScript==
 // Notes:
@@ -13,7 +13,7 @@
 
 //BODY, FONTS
 
-GM_addStyle("HTML > BODY {font-family:\'Arial\',\'Roboto\',\'sans-serif\';}") //
+GM_addStyle("HTML > BODY, BODY.ub-PNa-Ng {font-family:\'Arial\',\'Roboto\',\'sans-serif\';}") //
 
 GM_addStyle("DIV.dn {font-size:12px; line-height:1.5em; color:black;}") //
 
