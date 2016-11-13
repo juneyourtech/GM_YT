@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Rez
 // @namespace     YT_lowerres
-// @description  Site layout improvements for displays with smaller resolutions, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
+// @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6
+// @version 0.8.6.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -234,9 +234,11 @@ GM_addStyle("OL#watch7-playlist-tray .video-list-item .title {display:inline; wi
 video suggestion list, that also includes the following :before statement */
 
 //Added 28.11.2015.
-GM_addStyle("DIV#player-playlist .playlist-video-description {top:0px; width:auto; min-width:120px;}")
+GM_addStyle("DIV#player-playlist .playlist-video-description {top:0px; width:auto; min-width:120px; padding-left:1px;}")
 /* top:0px is to align text with the top side of thethumbnail. Min-width sets 
-   the text to reflow below the thumbnail, if viewport width is small. */
+   the text to reflow below the thumbnail, if viewport width is small.
+   
+   P., 13.11.2016: +padding-left to separate text from right video border. */
 
 /* ____80_character_separator________________________________________________ */
 
