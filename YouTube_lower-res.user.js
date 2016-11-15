@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6.1
+// @version 0.8.6.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -58,7 +58,10 @@ GM_addStyle("DIV#appbar-main-guide-notification-container {top:0px; left:201px;}
 //Overlayed across the search bar
 
 //ALERTS
-GM_addStyle("div#alerts {width:auto !important; min-width:480px !important; max-width:988px !important;}")
+GM_addStyle("DIV.alerts-wrapper {margin-top:18px;}") //15.11.2016
+//Let's see how it works.
+
+GM_addStyle("DIV#alerts {width:auto !important; min-width:480px !important; max-width:988px !important;}") //older code
 
 //Alerts New style (as of 10.2013)
 GM_addStyle("BODY.site-center-aligned #alerts, BODY.site-center-aligned #content, BODY.site-center-aligned.appbar-old-pl #player {width:auto; min-width:770px; max-width: 1003px;}")
