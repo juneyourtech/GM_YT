@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6.2
+// @version 0.8.6.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -57,9 +57,10 @@ GM_addStyle("DIV#masthead-search-terms {min-width:66px !important;}")
 GM_addStyle("DIV#appbar-main-guide-notification-container {top:0px; left:201px;}")
 //Overlayed across the search bar
 
-//ALERTS
-GM_addStyle("DIV.alerts-wrapper {margin-top:18px;}") //15.11.2016
-//Let's see how it works.
+//ALERTS //15.11.2016
+GM_addStyle("DIV[class*=\'home\'] DIV.alerts-wrapper {margin-top:18px;}")
+/* Let's see how it works. 
+   16.11.2016: Set it to work on frontpage only, with DIV.home. */
 
 GM_addStyle("DIV#alerts {width:auto !important; min-width:480px !important; max-width:988px !important;}") //older code
 
@@ -132,7 +133,7 @@ GM_addStyle("div#player[CLASS='full-frame'] {min-width:100%; max-width:100%;}") 
 
 //FRONTPAGE
 GM_addStyle("DIV.yt-card {background-color:inherit;}")
-//DIV.yt-card works, but aversely affects many other divs
+//DIV.yt-card works, but adversely affects many other divs
 
 GM_addStyle("DIV.yt-card.yt-card-has-padding#action-panel-details {padding-top:0px; padding-left:11px;}") //Works.
 /* The DOM Inspector interprets it like this: DIV#action-panel-details.yt-card.yt-card-has-padding {} */
