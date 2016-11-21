@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6.3
+// @version 0.8.6.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -244,8 +244,6 @@ GM_addStyle("DIV#player-playlist .playlist-video-description {top:0px; width:aut
    
    P., 13.11.2016: +padding-left to separate text from right video border. */
 
-/* ____80_character_separator________________________________________________ */
-
 //PLAYLIST ITEM TITLE PREFIX MARGIN
 //GM_addStyle("OL#watch7-playlist-tray .video-list-item .title:before {display:block; content:\'---\'; font-size:0px; height:1px; width:10px; margin-left:72px; border:none; background-color:blue;}") //works as block, but not as inline-block, if it's prefixed to inline text to allow it to have 1px padding. Because it's a block, it's somehow put out of normal flow and requires margin-left... I had set the original width to 25px.
 
@@ -438,15 +436,25 @@ GM_addStyle("LI[class~=video-list-item] A {display:block; min-width:95px; paddin
 //min-width:120px is equal to thumb width.
 //01.09.2016: Is paddin-right:1px ok?
 
-GM_addStyle("LI[class~=video-list-item] > a {margin-top:-1px; padding-top:1px;}")
+GM_addStyle("LI[class~=video-list-item] > A {margin-top:-1px; padding-top:1px;}")
 // border:solid 1px white; border-left:none;
 // 01.09.2016: removed width:100%; (caused a scrollbar to happen)
 //2015 start //This generally works, and is useful for testing.
 //GM_addStyle("UL[class~=video-list] > LI[class~=video-list-item]:after {content:\'---\'; display:block; position:relative; font-size:0px; height:5px; width:99%; border:solid 1px red; background-color:#99ccff;}") 
-/* LI[class~=video-list-item] > a:after - positions it within the A element.*/
+/* LI[class~=video-list-item] > A:after - positions it within the A element. */
+
+//SIDEBAR LINK: RELATED PLAYLIST for new Gecko //21.11.2016
+GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.related-playlist {position:absolute;}")
+/* Gecko50-based (?) browsers seem to have issues related to thumbnail link 
+   placements of mix links. Here, I used the BODY class related to the search 
+   box redesign, which should apply to browsers with a newer Gecko rendering
+   engine. Gecko 39, 38, and lesser ones should then not be affected. I first 
+   discovered the search box redesign for new Gecko on 20.11.2016. */
+
+/* ____80_character_separator________________________________________________ */
 
 //SIDEBAR VIDEO LINK VISITED COLOR
-GM_addStyle("LI[class~=video-list-item] a:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
+GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
 
 //SIDEBAR VIDEO TITLES
 //Set video suggestions' titles as blocks, min-width:120px
@@ -454,7 +462,7 @@ GM_addStyle("UL.video-list .video-list-item .title {display:block; min-width:95p
 //originally set block min-width:120px (thumb width), but then lessened it to 60px
 //original max-height 2.4em
 
-GM_addStyle("UL.video-list .video-list-item .title, H3.yt-lockup-title a {font-size:100%; font-weight:600;") //BOLD links
+GM_addStyle("UL.video-list .video-list-item .title, H3.yt-lockup-title A {font-size:100%; font-weight:600;") //BOLD links
 
 /*
 GM_addStyle("@media only screen and (max-width:1023px) {.frontBlock.frontBlock.frontType13 .frontLead,
