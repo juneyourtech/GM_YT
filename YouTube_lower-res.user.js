@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6.8
+// @version 0.8.6.9
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -369,7 +369,16 @@ GM_addStyle(".comment-header, div#watch-discussion .comment-text, div#watch-disc
 GM_addStyle("DIV.comments .comment-text .comment-text-content {background-color:white; color:black;}")
 
 //COMMENT TEXT: HOVER TO see bigger text
-GM_addStyle("DIV.comment-renderer-text-content:hover {max-height:unset; font-family:'Open Sans Condensed Light','Symbola'; font-size:175%; line-height:1.3em;}")
+GM_addStyle("DIV.comment-renderer-text-content:hover {max-height:unset; font-size:175%; line-height:1.3em;}")
+GM_addStyle("BODY:not[class*=gecko-5] DIV.comment-renderer-text-content:hover {font-family:\'Open Sans Condensed Light\',\'Symbola\';}")
+/* These two rulesets are meant to make comment text bigger on hover in order to 
+   better see emojis. To test, check out this one: 0fX14KNFJDg.
+   • E., 21.11.2016.: Separated font-family from font-size, because Firefox 50 
+   and newer have built-in emoji support with a special font. Older browsers, 
+   however, must do with Symbola. The line-height, btw, applies to 
+   Open Sans Condensed Light. */
+
+/* ____80_character_separator________________________________________________ */
 
 //COMMENT RATE BUTTONS //VOTE
 GM_addStyle("DIV.comments .mod-button {font-size:x-small; line-height:1.4em;}")
@@ -453,8 +462,6 @@ GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.
    box redesign, which should apply to browsers with a newer Gecko rendering
    engine. Gecko 39, 38, and lesser ones should then not be affected. I first 
    discovered the search box redesign for new Gecko on 20.11.2016. */
-
-/* ____80_character_separator________________________________________________ */
 
 //SIDEBAR VIDEO LINK VISITED COLOR
 GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
