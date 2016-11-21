@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6.9
+// @version 0.8.7
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -370,7 +370,7 @@ GM_addStyle("DIV.comments .comment-text .comment-text-content {background-color:
 
 //COMMENT TEXT: HOVER TO see bigger text
 GM_addStyle("DIV.comment-renderer-text-content:hover {max-height:unset; font-size:175%; line-height:1.3em;}")
-GM_addStyle("BODY:not[class*=gecko-5] DIV.comment-renderer-text-content:hover {font-family:\'Open Sans Condensed Light\',\'Symbola\';}")
+GM_addStyle("BODY:not([class*=gecko-5]) DIV.comment-renderer-text-content:hover {font-family:\'Open Sans Condensed Light\',\'Symbola\';}")
 /* These two rulesets are meant to make comment text bigger on hover in order to 
    better see emojis. To test, check out this one: 0fX14KNFJDg.
    • E., 21.11.2016.: Separated font-family from font-size, because Firefox 50 
