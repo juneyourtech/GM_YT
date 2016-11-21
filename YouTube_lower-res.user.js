@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.6.4
+// @version 0.8.6.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -426,7 +426,7 @@ GM_addStyle("LI[class~=video-list-item]:before {content:\'---\'; display:block; 
 //new size for 08.2016: 168x94
 
 GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb {width:136px; height:76px;}}")
-/* Strangely, this cretes a horizontal scrollbar only when logged in. */
+/* Strangely, this created a horizontal scrollbar only when logged in. */
 
 //SIDEBAR LINK (A)
 GM_addStyle("LI[class~=video-list-item] A {display:block; min-width:95px; padding-left:0px; padding-right:1px; padding-bottom:0px;}") 
@@ -444,7 +444,8 @@ GM_addStyle("LI[class~=video-list-item] > A {margin-top:-1px; padding-top:1px;}"
 /* LI[class~=video-list-item] > A:after - positions it within the A element. */
 
 //SIDEBAR LINK: RELATED PLAYLIST for new Gecko //21.11.2016
-GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.related-playlist {position:absolute;}")
+GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item]:before {display:none;}") //testing, w. posibility to prepend the selector with [class~=related-list-item]
+GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.related-playlist {position:unset;}") //was:absolute
 /* Gecko50-based (?) browsers seem to have issues related to thumbnail link 
    placements of mix links. Here, I used the BODY class related to the search 
    box redesign, which should apply to browsers with a newer Gecko rendering
