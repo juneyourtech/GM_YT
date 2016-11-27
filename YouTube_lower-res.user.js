@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.7.4
+// @version 0.8.7.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -343,8 +343,9 @@ GM_addStyle("div#watch7-views-info .video-extras-sparkbars {margin-top:0px;}") /
 GM_addStyle("div.video-extras-sparkbar-dislikes {background-color:#e52b21;}") //was: rgb(204)
 
 //LIKES/DISLIKES BUTTONS //vote
-GM_addStyle("span.like-button-renderer {float:right; margin-top:-1px; background-color:rgb(241, 241, 241); padding-right:5px;}") //works
+GM_addStyle("span.like-button-renderer {float:right; margin-top:-1px; background-color:transparent; padding-right:5px;}") //works
 // #99ccff
+//27.11.2016: Made background-color:transparent, color was rgb(241, 241, 241)
 
 //LIKES/DISLIKES BUTTON TEXT //vote
 GM_addStyle("BUTTON.yt-uix-button-has-icon.no-icon-markup .yt-uix-button-content {color:black;}")
