@@ -3,13 +3,14 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.7.5
+// @version 0.8.7.6
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
 // Notes:
 //   * is a wildcard character
 //   .tld is magic that matches all top-level domains (e.g. .com, .co.uk, .us, etc.)
+/* ____80_character_separator________________________________________________ */
 
 // Earliest note on update:
 // CSS last updated on P., 24.03.2013. /secondary location
@@ -122,21 +123,29 @@ GM_addStyle("div#player, div#watch7-main, BODY.site-center-aligned #content, BOD
 //it was 150px for some reason; then min-width:926px;
 //06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
 
-GM_addStyle("BODY.site-center-aligned #player, BODY.site-center-aligned .watch #content.content-alignment, BODY.site-center-aligned #player.watch-small {width:auto; min-width:784px; max-width:1003px; margin-left:auto; margin-right:auto; background-color:inherit;}") //Note that min-width 838px is good for playlist; don't know about player yet, but could just as well be 780px //Feburary-March 2014: max-width was set to 1040px. //April 2014: min-width: 771px
-//06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
+GM_addStyle("BODY.site-center-aligned #player, BODY.site-center-aligned .watch #content.content-alignment, BODY.site-center-aligned #player.watch-small {width:auto; min-width:784px; max-width:1003px; margin-left:auto; margin-right:auto; background-color:inherit;}")
+/* Note, that min-width 838px is good for playlist; don't know about player yet, 
+   but could just as well be 780px
+   • Feburary-March 2014: max-width was set to 1040px.
+   • April 2014: min-width: 771px
+   • 06.10.2016: Was 766px (seemed to work really well before the implementation 
+     of larger thumbnails). Now set to 784px. */
 
 GM_addStyle("DIV.watch #content.content-alignment, DIV.watch.watch-non-stage-mode #player.content-alignment {min-width:784px; max-width:1003px;}")
-//November 2014: min-width 766px //Updated end Nove 2014. Original max-width is 1066px
-//06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
+/* • November 2014: min-width 766px //Updated at end of November 2014. 
+     Original max-width is 1066px.
+   • 06.10.2016: Was 766px (seemed to work really well before the implementation 
+     of larger thumbnails). Now set to 784px. */
 
-GM_addStyle("div#player[CLASS='full-frame'] {min-width:100%; max-width:100%;}") //This applies to embeds
+GM_addStyle("div#player[CLASS='full-frame'] {min-width:100%; max-width:100%;}") //This applies to embeds.
 
 //FRONTPAGE
 GM_addStyle("DIV.yt-card {background-color:inherit;}")
 //DIV.yt-card works, but adversely affects many other divs
 
 GM_addStyle("DIV.yt-card.yt-card-has-padding#action-panel-details {padding-top:0px; padding-left:11px;}") //Works.
-/* The DOM Inspector interprets it like this: DIV#action-panel-details.yt-card.yt-card-has-padding {} */
+/* The DOM Inspector interprets it like this: 
+   DIV#action-panel-details.yt-card.yt-card-has-padding {} */
 
 GM_addStyle("DIV.individual-feed {background-color:transparent; margin-left:22px; margin-right:22px;}")
 //DIV.yt-card works, but aversely affects many other divs
@@ -174,6 +183,9 @@ GM_addStyle("DIV.yt-lockup.yt-lockup-tile .yt-lockup-content {padding-left:7px;}
 GM_addStyle("DIV.yt-lockup .yt-lockup-content:hover H3.yt-lockup-title A {text-decoration:underline;}")
 
 //SEARCH RESULT ITEM LINK
+GM_addStyle("BODY.exp-search-font-18 #results .yt-lockup-tile .yt-lockup-title {font-size:15px;}")
+//+05.12.2016, per December 2016 redesign.
+
 GM_addStyle("DIV.yt-lockup-content H3.yt-lockup-title a {background-color:inherit;}") //
 GM_addStyle("DIV.yt-lockup-content H3.yt-lockup-title a:visited {color:SlateBlue;}") //
 
@@ -188,8 +200,12 @@ GM_addStyle("DIV.live-chat-widget .comment-text {display:inline-block; width:100
 GM_addStyle("DIV.live-chat-widget div#comments-view .content {width:auto !important; min-width:unset !important;}")
 
 //#PLAYLIST
-GM_addStyle("DIV#page.watch .content-alignment {width:auto; min-width:783px;}") //width:auto is just a failsafe parameter; 
-/* min-width:886px; is to make sure that the text is wide enough, but it's not enough for 800x600px resolutions, so min-width:783px is for this resolution. Unfortunately, it interferes with layouts that don't include the playlist, so... Use + and a preceding selector. */
+GM_addStyle("DIV#page.watch .content-alignment {width:auto; min-width:783px;}")
+/* width:auto is just a failsafe parameter; 
+   min-width:886px; is to make sure that the text is wide enough, but it's not 
+   enough for 800x600px resolutions, so min-width:783px is for this resolution. 
+   Unfortunately, it interferes with layouts that don't include the playlist, 
+   so... Use + and a preceding selector. */
 
 //TOP BAR RIGHT
 GM_addStyle("DIV.watch7-playlist-bar-right {background-color:rgb(27, 27, 27);}")
@@ -380,8 +396,6 @@ GM_addStyle("BODY:not([class*=gecko-5]) DIV.comment-renderer-text-content:hover 
    selection, because not all computers and users have Open Sans Condensed 
    Light. The line-height, btw, applies to that same font. It was chosen because 
    of its condensed character strokes at a big (175%) size. */
-
-/* ____80_character_separator________________________________________________ */
 
 //COMMENT RATE BUTTONS //VOTE
 GM_addStyle("DIV.comments .mod-button {font-size:x-small; line-height:1.4em;}")
