@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.7.6
+// @version 0.8.7.7
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -327,9 +327,16 @@ GM_addStyle("SPAN.standalone-collection-badge-renderer-text A {margin-right:5px;
    Options: right:165px; bottom:-12px */
 
 //USER INFO (NAME)
-GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, rgb(241, 241, 241) 53px, white 0%, rgb(241, 241, 241) 100%);}")
+GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, white 0%, rgb(241, 241, 241) 100%);}")
+//L., 17.12.2016. rgb(241) set to 48px; was: 53px
+//Old gradient variant: rgb(241, 241, 241) 48px, white 0%, rgb(241, 241, 241) 100%
 
-GM_addStyle("DIV#watch-header .yt-user-info {padding-bottom:0px;}")
+
+GM_addStyle("DIV#watch-header .yt-user-info {padding-bottom:0px; margin-left:53px}")
+//L., 17.12.2016: +margin-left, original: 58px
+
+//The RED SUBSCRIBE BUTTON //Code added on L., 17.12.2016.
+GM_addStyle("SPAN#watch7-subscription-container {margin-left:5px}")
 
 //BELOW TITLE: ACTION BUTTONS
 GM_addStyle("div#watch8-secondary-actions {position:relative; left:0px; background:linear-gradient(to bottom, white 50%, transparent 100%);}")
