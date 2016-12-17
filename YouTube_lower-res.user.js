@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.7.8
+// @version 0.8.7.9
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -351,7 +351,7 @@ GM_addStyle("div#watch8-secondary-actions {position:relative; left:0px; backgrou
 //GM_addStyle("div#watch7-views-info {top:-96px; right:0px; height:29px;}") //Original -47px //was:-42px //march 2015: -95px
 //right was 8px until changed to 0 on march 2015. Set height.
 
-GM_addStyle("div#watch8-sentiment-actions {position:absolute; top:-82px; right:0px;}") //June 2015
+GM_addStyle("div#watch8-sentiment-actions {position:absolute; top:-77px; right:0px;}") //June 2015
 /* The position of this bock depends on #watch7-user-header and its top padding. 
 top was: -88px. L., 17.12.2016: set to -82px. Then -77px. */
 
