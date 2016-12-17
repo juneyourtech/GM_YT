@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.7.7
+// @version 0.8.7.8
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -272,7 +272,9 @@ GM_addStyle("BUTTON.yt-uix-button-playlist-remove-item {margin-right:0px; margin
 //GM_addStyle(" ")
 
 //#VIDEO: NOTIFICATIONS //30.10.2016
-GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:6px;}")
+GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:3px;}")
+/* It seems, that these margins are pretty definite. I'm currently testing 
+margin-bottom: 3px (was:6px)*/
 
 //#VIDEO: TITLE BELOW
 GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:0px; min-height:130px; background-color:inherit;}")
@@ -327,10 +329,13 @@ GM_addStyle("SPAN.standalone-collection-badge-renderer-text A {margin-right:5px;
    Options: right:165px; bottom:-12px */
 
 //USER INFO (NAME)
-GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, white 0%, rgb(241, 241, 241) 100%);}")
-//L., 17.12.2016. rgb(241) set to 48px; was: 53px
-//Old gradient variant: rgb(241, 241, 241) 48px, white 0%, rgb(241, 241, 241) 100%
-
+GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradient(to right, rgb(241, 241, 241) 48px, white 0%, rgb(241, 241, 241) 100%); padding-top:0px; margin-top:5px;}")
+/* L., 17.12.2016: 
+   rgb(241) set to 48px; was: 53px
+          Old gradient variant: (rgb(241, 241, 241) 48px, white 0%, rgb(241, 241, 241) 100%)
+    Alternate gradient variant: (white 0%, rgb(241, 241, 241) 100%)
+   +padding-top:5px; original(?):11px. Then 0.
+   +margin-top. */
 
 GM_addStyle("DIV#watch-header .yt-user-info {padding-bottom:0px; margin-left:53px}")
 //L., 17.12.2016: +margin-left, original: 58px
@@ -346,7 +351,9 @@ GM_addStyle("div#watch8-secondary-actions {position:relative; left:0px; backgrou
 //GM_addStyle("div#watch7-views-info {top:-96px; right:0px; height:29px;}") //Original -47px //was:-42px //march 2015: -95px
 //right was 8px until changed to 0 on march 2015. Set height.
 
-GM_addStyle("div#watch8-sentiment-actions {position:absolute; top:-88px; right:0px;}") //June 2015
+GM_addStyle("div#watch8-sentiment-actions {position:absolute; top:-82px; right:0px;}") //June 2015
+/* The position of this bock depends on #watch7-user-header and its top padding. 
+top was: -88px. L., 17.12.2016: set to -82px. Then -77px. */
 
 //June 2015
 GM_addStyle("div#watch7-views-info {position:relative; bottom:0px; right:; padding-right:5px;}")
