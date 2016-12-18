@@ -1,14 +1,18 @@
+@-moz-document domain('hangouts.google.com') {
+
 /* #most of it */
 DIV.g-Ue-Ja-t {min-width:628px;}
 
 /* right block */
-DIV.g-Ue-v0h5Oe {display:block; top:70px; left:5px; width:auto; min-width:unset; min-width:64px; max-width:unset; min-height:240px;}
+DIV.g-Ue-v0h5Oe {display:block; top:70px; left:5px; width:auto; min-width:unset; min-width:64px; max-width:unset; min-height:160px;}
 
 /* right block rings (all) */
-DIV.g-Ue-v0h5Oe UL {margin-bottom:0px; margin-top:0px; white-space:normal;}
+DIV.g-Ue-v0h5Oe UL {margin-top:0px; margin-bottom:0px; white-space:normal;}
 
 /* right block rings (individual) */
 DIV.g-Ue-v0h5Oe LI {margin-top:16px; margin-right:24px;}
 
 /* right block rings */
 DIV.g-Ue-b {margin-bottom:5px;}
+
+}
