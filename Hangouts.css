@@ -7,7 +7,7 @@ DIV.g-Ue-Ja-t {min-width:628px;}
 DIV.kFx1Ae-xdwExf-eb-m IMG {display:none;}
   
 /* right block */
-DIV.g-Ue-v0h5Oe {display:block; top:70px; left:5px; width:auto; min-width:unset; min-width:64px; max-width:unset; min-height:160px;}
+DIV.g-Ue-v0h5Oe {display:block; top:70px; left:5px; width:auto; min-width:unset; min-width:64px; max-width:unset; min-height:160px; z-index:0;}
 
 /* right block rings (all) */
 DIV.g-Ue-v0h5Oe UL {margin-top:0px; margin-bottom:0px; white-space:normal;}
