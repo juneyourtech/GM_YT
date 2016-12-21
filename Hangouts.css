@@ -1,5 +1,15 @@
 @-moz-document domain('hangouts.google.com') {
 
+/* This userstyle is meant to optimise the width and usable surface area of Google Hangouts.
+   Primarily, I created this style in order to accommodate the Hangouts web-based view for
+   smaller screens — specifically 320x480px, but it's still very much a work in progress.
+  
+   Among additional improvements so far is the removal of the big background image to save
+   on device resources.
+  
+   Note. No copyright infringment intended (wrt class and id names).
+   All trademarks are the property of their respective owners. */
+
 /* #most of it */
 DIV.g-Ue-Ja-t {min-width:628px;}
 
