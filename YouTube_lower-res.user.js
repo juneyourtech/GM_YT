@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.1
+// @version 0.8.8.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -498,7 +498,7 @@ GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.
 GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
 
 //SIDE BAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR //K., 21.12.2016.
-GM_addStyle("SPAN.resume-playback-background {background:#777 none repeat scroll 0% 0%;}") //
+GM_addStyle("SPAN.resume-playback-background {background-color:#222}") //was: 777; original: #eee
 GM_addStyle("SPAN.resume-playback-progress-bar {background-color:SlateBlue;}") //
 /* The progress bar for each visited video was introduced in late 2016, 
    around October, November, or December. */
