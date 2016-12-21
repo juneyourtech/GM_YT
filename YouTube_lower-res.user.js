@@ -436,7 +436,7 @@ GM_addStyle("DIV.autoplay-bar .checkbox-on-off {position:absolute; display:block
 //GM_addStyle("div#watch7-sidebar-modules .autoplay-bar .watch-sidebar-head {margin-left:0px; margin-right:0px; width:auto; min-width:120px;}") //06.2014
 //min-width:177px added on 02.2015 //worked until June 2015.
 //min-width:120px was apparently then set to on 06.2015[, but] below.
-GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {display:inline-block; margin-left:0px; margin-right:0px; width:98%; overflow:initial; text-align:right; white-space:normal; text-overflow:unset; border-top:solid 1px white; border-right:solid 1px white; border-bottom:solid 1px white;}")
+GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {display:inline-block; margin-left:0px; margin-right:0px; width:98%; overflow:initial; white-space:normal; word-wrap:normal; text-overflow:unset; text-align:right; border-top:solid 1px white; border-right:solid 1px white; border-bottom:solid 1px white;}")
 //21.12.2016: removed min-width:120px, replaced with 98%; +text-align:right.
 //21.12.2016: +inline-block (resolves positioning the below :before pseudoelement)
 //21.12.2016: white-space set to normal. Resolves floating issues.
