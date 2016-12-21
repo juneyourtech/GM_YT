@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.4
+// @version 0.8.8.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -441,7 +441,7 @@ GM_addStyle("@media only screen and (max-width:832px) {DIV.autoplay-bar .checkbo
 GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {margin-left:0px; margin-right:0px; width:98%; text-align:right; border-top:solid 1px navy; border-right:solid 1px navy; border-bottom:solid 1px navy;}")
 //21.12.2016: removed min-width:120px, replaced with 98%; +text-align:right.
 
-GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head:before {content:\'---\'; display:block; margin-right:0px; font-size:0px; height:21px; width:168px; background-color:SlateBlue; float:left;}") //21.12.2016., experimental.
+GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:before {content:\'---\'; display:block; margin-right:0px; font-size:0px; height:21px; width:168px; background-color:SlateBlue; float:left;}") //21.12.2016., experimental.
 
 //GM_addStyle("DIV.autoplay-bar .watch-sidebar-body {clear:both; display:inline-block; width:100%;}") //experimental; uncomment as needed.
 
