@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.7.1
+// @version 0.8.8.7.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -437,16 +437,16 @@ GM_addStyle("DIV.autoplay-bar .checkbox-on-off {position:absolute; display:block
 //GM_addStyle("div#watch7-sidebar-modules .autoplay-bar .watch-sidebar-head {margin-left:0px; margin-right:0px; width:auto; min-width:120px;}") //06.2014
 //min-width:177px added on 02.2015 //worked until June 2015.
 //min-width:120px was apparently then set to on 06.2015[, but] below.
-GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {display:inline-block; width:98%; margin-left:0px; margin-right:0px; padding-right:1px; overflow:initial; white-space:normal; word-wrap:normal; text-overflow:unset; text-align:right; border-top:solid 1px white; border-right:solid 1px white; border-bottom:solid 1px white;}")
+GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {display:inline-block; width:98%; margin-left:0px; margin-right:0px; padding-right:0px; overflow:initial; white-space:normal; word-wrap:normal; text-overflow:unset; text-align:right; border-top:solid 1px white; border-right:solid 1px white; border-bottom:solid 1px white;}")
 //21.12.2016: removed min-width:120px, replaced with 98%; +text-align:right.
 //21.12.2016: +inline-block (resolves positioning the below :before pseudoelement)
 //21.12.2016: white-space set to normal. Resolves floating issues.
 //21.12.2016: unset text-overflow; was:ellipsis
 
-GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:before {content:\'---\'; display:block; margin:0px; font-size:0px; height:22px; width:168px; float:left;}") //21.12.2016., works
+GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:before {content:\'---\'; display:block; margin:0px; font-size:0px; height:21px; width:168px; float:left;}") //21.12.2016., works
 /* background-color:Thistle; */
 
-GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:after {content:\'\:\'; display:inline; margin:0px; background-color:Thistle; float:left;}") //21.12.2016., experimental.
+GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:after {content:\'–\'; display:inline; margin:0px; padding:0px; background-color:Thistle;}") //21.12.2016., experimental.
 
 GM_addStyle("@media only screen and (max-width:832px) {DIV.autoplay-bar .checkbox-on-off, DIV#watch7-sidebar H4.watch-sidebar-head:before {width:135px;}}") //K., 21.12.2016, experimental.
 
