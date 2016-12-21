@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.7
+// @version 0.8.8.7.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -427,9 +427,10 @@ GM_addStyle("SPAN.qualified-channel-title.ellipsized {display:inline;}")
 //GM_addStyle("UL.video-list .video-list-item .yt-uix-button-subscription-container {left:inherit; right:8px; bottom:0px;}") //The above ruleset fixes the inline stuff.
 
 // SIDEBAR AUTOPLAY (HEAD)
-GM_addStyle("DIV.autoplay-bar .checkbox-on-off {position:absolute; display:block; top:0px; right:unset; left:0px; margin-left:0px; width:168px; border-top:solid 1px Silver; border-right:solid 1px Silver; border-bottom:solid 1px Silver;}") //
+GM_addStyle("DIV.autoplay-bar .checkbox-on-off {position:absolute; display:block; top:0px; right:unset; left:0px; margin-left:0px; width:168px;}") //
 /* margin-left:52px was apparently added on 02.2015. 
-   K., 21.12.2016: 
+   K., 21.12.2016:
+   Use these when appropriate: border-top:solid 1px Silver; border-right:solid 1px Silver; border-bottom:solid 1px Silver;
 */
 
 //SIDEBAR HEAD (H4)
@@ -442,9 +443,12 @@ GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {display:inline-block; width
 //21.12.2016: white-space set to normal. Resolves floating issues.
 //21.12.2016: unset text-overflow; was:ellipsis
 
-GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:before {content:\'---\'; display:block; margin-right:0px; font-size:0px; height:21px; width:168px; background-color:Thistle; float:left;}") //21.12.2016., experimental.
+GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:before {content:\'---\'; display:block; margin:0px; font-size:0px; height:22px; width:168px; float:left;}") //21.12.2016., works
+/* background-color:Thistle; */
 
-GM_addStyle("@media only screen and (max-width:832px) {DIV.autoplay-bar .checkbox-on-off, DIV#watch7-sidebar H4.watch-sidebar-head:before {width:136px;}}") //K., 21.12.2016, experimental
+GM_addStyle("DIV#watch7-sidebar H4.watch-sidebar-head:after {content:\'\:\'; display:inline; margin:0px; background-color:Thistle; float:left;}") //21.12.2016., experimental.
+
+GM_addStyle("@media only screen and (max-width:832px) {DIV.autoplay-bar .checkbox-on-off, DIV#watch7-sidebar H4.watch-sidebar-head:before {width:135px;}}") //K., 21.12.2016, experimental.
 
 //GM_addStyle("DIV.autoplay-bar .watch-sidebar-body {clear:both; display:inline-block; width:100%;}") //experimental; uncomment as needed.
 
