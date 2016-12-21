@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.2
+// @version 0.8.8.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -408,8 +408,8 @@ GM_addStyle("BODY:not([class*=gecko-5]) DIV.comment-renderer-text-content:hover 
    and newer have built-in emoji support with a special font. Older browsers, 
    however, must do with Symbola. The upper ruleset has a graeter font 
    selection, because not all computers and users have Open Sans Condensed 
-   Light. The line-height, btw, applies to that same font. It was chosen because 
-   of its condensed character strokes at a big (175%) size. */
+   Light. The line-height, btw, applies to that same font. It was chosen 
+   because of its condensed character strokes at a big (175%) size. */
 
 //COMMENT RATE BUTTONS //VOTE
 GM_addStyle("DIV.comments .mod-button {font-size:x-small; line-height:1.4em;}")
@@ -427,19 +427,29 @@ GM_addStyle("SPAN.qualified-channel-title.ellipsized {display:inline;}")
 //GM_addStyle("UL.video-list .video-list-item .yt-uix-button-subscription-container {left:inherit; right:8px; bottom:0px;}") //The above ruleset fixes the inline stuff.
 
 // SIDEBAR AUTOPLAY (HEAD)
+GM_addStyle("DIV.autoplay-bar .checkbox-on-off {position:absolute; display:block; top:0px; right:unset; left:0px; margin-left:0px; width:168px; border:solid 1px Silver;}") //
+/* margin-left:52px was apparently added on 02.2015. 
+   K., 21.12.2016: 
+*/
+
+GM_addStyle("@media only screen and (max-width:832px) {DIV.autoplay-bar .checkbox-on-off {width:136px;}}") //K., 21.12.2016, experimental
+
+//GM_addStyle("DIV.autoplay-bar .watch-sidebar-body {clear:both; display:inline-block; width:100%;}") //experimental; uncomment as needed.
+
+//SIDEBAR HEAD (H4)
 //GM_addStyle("div#watch7-sidebar-modules .autoplay-bar .watch-sidebar-head {margin-left:0px; margin-right:0px; width:auto; min-width:120px;}") //06.2014
 //min-width:177px added on 02.2015 //worked until June 2015.
+GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head {margin-left:0px; margin-right:0px; width:98%; border-top:solid 1px navy; border-right:solid 1px navy; border-bottom:solid 1px navy;}") //06.2015
+//21.12.2016: removed  min-width:120px;
 
-GM_addStyle("div#watch7-sidebar .watch-sidebar-head {margin-left:0px; margin-right:0px; width:auto; min-width:120px;}") //06.2015
-
-GM_addStyle("div.autoplay-bar .checkbox-on-off {margin-left:52px;}") //02.2015
+GM_addStyle("DIV#watch7-sidebar .watch-sidebar-head:before {content:\'---\'; display:block; margin-right:0px; font-size:0px; height:21px; width:168px; background-color:red; float:left;}") //21.12.2016., experimental.
 
 // SIDEBAR
-GM_addStyle("div.watch7-playlist-sidebar, div#watch7-sidebar {margin-right:0px; min-width:120px;}") //06.2014
-GM_addStyle("div#watch7-sidebar, DIV.watch-sidebar {padding-right:0px; margin-right:auto; margin-left:auto;}") //06.2014
+GM_addStyle("DIV.watch7-playlist-sidebar, div#watch7-sidebar {margin-right:0px; min-width:120px;}") //06.2014
+GM_addStyle("DIV#watch7-sidebar, DIV.watch-sidebar {padding-right:0px; margin-right:auto; margin-left:auto;}") //06.2014
 GM_addStyle("DIV.watch-sidebar {min-width:198px;}") //06.2014
 
-GM_addStyle("div#watch7-sidebar {margin-left:640px; margin-right:0px; width:auto; max-width:400px; min-width:120px; background-color:inherit;}") //06.2014 // border-top:solid 1px white; border-right:solid 1px white;
+GM_addStyle("DIV#watch7-sidebar {margin-left:640px; margin-right:0px; width:auto; max-width:400px; min-width:120px; background-color:inherit;}") //06.2014 // border-top:solid 1px white; border-right:solid 1px white;
 
 //gutter
 GM_addStyle("BODY.site-center-aligned .watch-sidebar-gutter {padding-right:0px;}") //06.2014
