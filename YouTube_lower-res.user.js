@@ -24,7 +24,7 @@
 //BODY, FONTS
 //GM_addStyle("HTML BODY.exp-roboto, HTML .exp-roboto button, HTML .exp-roboto input, HTML .exp-roboto textarea, HTML .exp-roboto select {font-family:Arial,sans-serif; }") //
 
-GM_addStyle("HTML BODY, HTML > BODY, HTML INPUT, HTML BUTTON, HTML TEXTAREA, HTML SELECT {font-family:Arial,Helvetica,Helv,sans-serif,Roboto;}")
+GM_addStyle("HTML BODY, HTML > BODY, HTML INPUT, HTML BUTTON, HTML TEXTAREA, HTML SELECT {font-family:\'Arial\',\'Helvetica\',\'Helv\',\'sans-serif\',\'Roboto\';}")
 //This affects BODY anywhere in the document. I might consider consolidating this.
 
 GM_addStyle("HTML > BODY, DIV#watch7-headline H1 {color:black;}")
@@ -496,6 +496,12 @@ GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.
 
 //SIDEBAR VIDEO LINK VISITED COLOR
 GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
+
+//SIDE BAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR //K., 21.12.2016.
+GM_addStyle("SPAN.resume-playback-background {background:#777 none repeat scroll 0% 0%;}") //
+GM_addStyle("SPAN.resume-playback-progress-bar {color:SlateBlue;}") //
+/* The progress bar for each visited video was introduced in late 2016, 
+   around October, November, or December. */
 
 //SIDEBAR VIDEO TITLES
 //Set video suggestions' titles as blocks, min-width:120px
