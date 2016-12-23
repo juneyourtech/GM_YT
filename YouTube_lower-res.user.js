@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.7.3
+// @version 0.8.8.7.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -389,14 +389,24 @@ GM_addStyle("BUTTON.yt-uix-button-has-icon.no-icon-markup .yt-uix-button-content
 //COMMENTS
 GM_addStyle("DIV.all-comments, DIV.mj {background-color:inherit; color:black;}") //
 
-GM_addStyle("DIV.all-comments a {background-color:inherit; color:navy;}")
-GM_addStyle("DIV.all-comments a:hover {color:blue;}")
+//COMMENT MARGINS //all added on R., 23.12.2016.
+GM_addStyle("SECTION.comment-thread-renderer {margin-right:0px;}")
+GM_addStyle("DIV.comment-renderer {margin-right:15px;}")
+GM_addStyle("DIV.branded-page-box {padding-right:1px;}")
+//This one is now inline with username.
 
+//LINKS IN COMMENTS
+GM_addStyle("DIV.all-comments A {background-color:inherit; color:navy;}")
+GM_addStyle("DIV.all-comments A:hover {color:blue;}")
+
+//COMMENT TEXT COLOR
 GM_addStyle("DIV.comments .comment-item .content {color:black;}")
 
-GM_addStyle(".comment-header, div#watch-discussion .comment-text, div#watch-discussion .comment .author {background-color:white;}")
+//COMMENT AUTHOR??
+GM_addStyle(".comment-header, DIV#watch-discussion .comment-text, DIV#watch-discussion .comment .author {background-color:white;}")
 //div.comments .comment-text .comment-text-content {padding-left:2px}
 
+//COMMENT TEXT COLOR (AGAIN)
 GM_addStyle("DIV.comments .comment-text .comment-text-content {background-color:white; color:black;}")
 
 //COMMENT TEXT: HOVER TO see bigger text
