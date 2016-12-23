@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.7.4
+// @version 0.8.8.7.6
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -392,7 +392,7 @@ GM_addStyle("DIV.all-comments, DIV.mj {background-color:inherit; color:black;}")
 //COMMENT MARGINS //all added on R., 23.12.2016.
 GM_addStyle("SECTION.comment-thread-renderer {margin-right:0px;}")
 GM_addStyle("DIV.comment-renderer {margin-right:15px;}")
-GM_addStyle("DIV.branded-page-box {padding-right:1px;}")
+GM_addStyle("DIV.branded-page-box {padding-left:0px; padding-right:1px;}")
 //This one is now inline with username.
 
 //LINKS IN COMMENTS
