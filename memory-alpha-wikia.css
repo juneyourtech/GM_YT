@@ -1,0 +1,65 @@
+@-moz-document domain('memory-alpha.wikia.com') {
+
+/* Synchronised on T., 17.01.2017. */
+
+/* FANDOM TOP HEADER */
+DIV.wds-global-navigation {background-color:black;}
+
+DIV.wds-global-navigation__content-bar {width:auto; max-width:768px;}
+
+/* PAGE overall */
+SECTION.WikiaPage {padding-top:0px; padding-left:2px; padding-right:1px;}
+
+/* Memory-Alpha HEADER (contains the logo) */
+@media only screen and (max-width:1083px) { HTML > BODY.skin-oasis {background:#111 url('http://vignette3.wikia.nocookie.net/memoryalpha/images/5/50/Wiki-background/revision/latest?cb=20120124175716&path-prefix=en') repeat scroll center top;}  SECTION.WikiaPage {width:auto; margin-left:8px; margin-right:8px;}  DIV.banner-notifications-wrapper.float {left:0px; right:0px; width:auto; margin-left:0px;}  HEADER.WikiHeader > NAV.WikiNav .navbackground {left:-2px; width:100%;}  NAV.WikiNav LI.nav-item:first-child {margin-left:0px;} }
+
+/* HEADER (contains the Memory Alpha logo) */
+HEADER.WikiHeader {width:auto;}
+/* was: 100% */
+
+/* NAV */
+HEADER.WikiHeader > NAV {width:100%; margin:15px 73px 32px 0px;} 
+/* ^ top right bottom left */
+
+HEADER.WikiHeader > NAV LI > A {padding-left:1px; padding-right:1px;}
+
+HEADER.WikiHeader > NAV:not([class*=subnav]) LI > A {padding-left:1px; padding-right:1px;}
+
+HEADER.WikiHeader > NAV:not([class*=subnav]) LI:first-child > A {padding-left:0px;}
+
+HEADER.WikiHeader > NAV:not([class*=subnav]) LI:last-child > A {padding-right:0px;}
+
+HEADER.WikiHeader > NAV:not([class*=subnav]) LI:not(:last-child) > A {border-right:solid 1px black;}
+/* was: white */
+
+/* HEADER.WikiHeader > NAV:not([class*=subnav]) LI:not(:first-child) > A */
+
+/* LI.marked applies on hover or when selected. I think. */
+/* HEADER.WikiHeader > NAV LI.marked > A {padding:0px 0px;} */
+
+/* SUBNAV */
+HEADER.WikiHeader > NAV .subnav-2 {width:auto;}
+
+HEADER.WikiHeader > NAV .subnav-2 LI .subnav-2a {margin-left:0px; margin-right:1px;}
+
+HEADER.WikiHeader > NAV .subnav-2 LI A.subnav-2a {border:solid 1px #888;}
+
+/* SUBNAV DOWN ARROW (CHEVRON) */
+HEADER.WikiHeader > NAV .subnav-2 LI .subnav-2a > .chevron {margin-left:0px;}
+
+/* PAGE: Contents: Thumbnail file links */
+FIGURE.article-thumb.show-info-icon .info-icon {display:block;}
+
+/* BELOW: Recent activity */
+@media only screen and (max-width:717px) { DIV.WikiaRail {-moz-column-count:unset;} }
+
+DIV.WikiaRail {padding-left:0px; padding-right:0px;}
+
+/* FOOTER */
+@media only screen and (max-width:768px) { FOOTER.wds-global-footer {width:auto;} }
+
+/* LOWER BAR */
+DIV.WikiaBarWrapper .wikia-bar {width:auto; max-width:1014px;}
+
+
+}
