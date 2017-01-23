@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.7.7
+// @version 0.8.8.7.8
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -137,7 +137,12 @@ GM_addStyle("DIV.watch #content.content-alignment, DIV.watch.watch-non-stage-mod
    • 06.10.2016: Was 766px (seemed to work really well before the implementation 
      of larger thumbnails). Now set to 784px. */
 
-GM_addStyle("div#player[CLASS='full-frame'] {min-width:100%; max-width:100%;}") //This applies to embeds.
+// EMBEDS
+GM_addStyle("DIV#player[CLASS=\'full-frame\'] {min-width:100%; max-width:100%;}") //This applies to embeds.
+
+// EMBEDS
+GM_addStyle("DIV#player:not(.content-alignment) {display:inline;}") //23.01.2017
+//This applies to embeds.
 
 //FRONTPAGE
 GM_addStyle("DIV.yt-card {background-color:inherit;}")
