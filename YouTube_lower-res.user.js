@@ -143,6 +143,11 @@ GM_addStyle("DIV#player[CLASS=\'full-frame\'] {min-width:100%; max-width:100%;}"
 // EMBEDS
 GM_addStyle("DIV#player:not(.content-alignment) {display:inline;}") //23.01.2017
 //This applies to embeds.
+/* elements in embeds contain: class="date-20170120 "
+   site element contains: role="complementary"
+   site element classes not in embeds: 
+   class="appbar-hidden visibility-logging-enabled not-nirvana-dogfood  flex-width-enabled  flex-width-enabled-snap  yt-user-logged-in [if logged in]  page-loaded"
+   player classes not in embeds: class=" content-alignment watch-small" */
 
 //FRONTPAGE
 GM_addStyle("DIV.yt-card {background-color:inherit;}")
