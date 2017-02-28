@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.7.8
+// @version 0.8.8.7.9
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -507,8 +507,14 @@ GM_addStyle("LI[class~=video-list-item]:before {content:\'---\'; display:block; 
 //new size: 180px × 101px
 //new size for 08.2016: 168x94
 
-GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb {width:136px; height:76px;}}")
+GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb {width:136px; height:76px;}  SPAN.video-time {bottom:19px;} LI.related-list-item {right:1px;} }")
 /* Strangely, this created a horizontal scrollbar only when logged in. */
+/* This line reduces video thumbnails' size in the sidebar, among other things. 
+
+   T., 28.02.2017: video-time in small sizes.
+
+   Current original:
+   .video-list-item .yt-uix-simple-thumb-wrap {margin-right:8px} */
 
 //SIDEBAR LINK (A)
 GM_addStyle("LI[class~=video-list-item] A {display:block; min-width:95px; padding-left:0px; padding-right:1px; padding-bottom:0px;}") 
