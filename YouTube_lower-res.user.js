@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.0
+// @version 0.8.8.8.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -221,7 +221,7 @@ GM_addStyle("DIV#page.watch .content-alignment {width:auto; min-width:783px;}")
 GM_addStyle("DIV.watch7-playlist-bar-right {background-color:rgb(27, 27, 27);}")
 
 //TOP: Video count
-GM_addStyle("DIV.playlist #watch7-playlist-bar-controls {width:auto; min-width:81px; max-width:120px;}") //min-width is provisional; in some rare cases, there might be plalylists with maybe a thousand or so items.
+GM_addStyle("DIV.playlist #watch7-playlist-bar-controls {width:auto; min-width:81px; max-width:120px;}") //min-width is provisional; in some rare cases, there might be playlists with maybe a thousand or so items.
 
 //TOP: SHUFFLE and other buttons' location
 GM_addStyle("DIV.watch7-playlist-bar-secondary-controls {padding-right:15px;}")
@@ -265,7 +265,7 @@ video suggestion list, that also includes the following :before statement */
 
 //Added 28.11.2015.
 GM_addStyle("DIV#player-playlist .playlist-video-description {top:0px; width:auto; min-width:120px; padding-left:1px;}")
-/* top:0px is to align text with the top side of thethumbnail. Min-width sets 
+/* top:0px is to align text with the top side of the thumbnail. Min-width sets 
    the text to reflow below the thumbnail, if viewport width is small.
    
    P., 13.11.2016: +padding-left to separate text from right video border. */
@@ -320,8 +320,8 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.
 /* This shows if there's a long title. I need this to see if 
    letter-spacing:-0.05em as set by default .long-title rule. */
 //GM_addStyle("DIV#watch7-headline h1 .long-title:after {display:inline-block; content:\'LONG TITLE\'; font-size:x-small; border:solid 1px maroon;}")
-/* ^ The above rule should ideally moved to the future development version of 
-   the userstyle, as the current file is now like a production version. 
+/* ^ The above rule should ideally be moved to the future development version 
+   of the userstyle, as the current file is now like a production version. 
    Of sorts. */
 
 //GM_addStyle("DIV#watch7-headline .yt-uix-expander-head {letter-spacing:-0.04em;}")
@@ -368,11 +368,10 @@ top was: -88px. L., 17.12.2016: set to -82px. Then -77px. */
 //June 2015
 GM_addStyle("div#watch7-views-info {position:relative; bottom:0px; right:; padding-right:5px;}")
 /* June 2015 proposal, because has a parent container. Already absolutely 
-positioned.:
+positioned:
 div#watch7-views-info {top:0px;} — Note that top assumes absolute positioning
 div#watch8-sentment-actions {}
-• struck height
-*/
+• struck height. */
 
 //VIEW COUNT
 GM_addStyle("div.watch-view-count {position:static; text-align:right;}")
@@ -507,14 +506,24 @@ GM_addStyle("LI[class~=video-list-item]:before {content:\'---\'; display:block; 
 //new size: 180px × 101px
 //new size for 08.2016: 168x94
 
-GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb {width:136px; height:76px;}  SPAN.video-time {bottom:19px;} LI.related-list-item .video-time {right:1px;} }")
-/* Strangely, this created a horizontal scrollbar only when logged in. */
+GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .thumb-wrapper, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb IMG, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG {width:136px !important; height:76px;}  SPAN.video-time {bottom:1px;} LI.related-list-item .video-time {right:1px;} }")
+/* Strangely, this (had) created a horizontal scrollbar only when logged in. */
 /* This line reduces video thumbnails' size in the sidebar, among other things. 
 
    T., 28.02.2017: video-time in small sizes.
 
    Current original:
-   .video-list-item .yt-uix-simple-thumb-wrap {margin-right:8px} */
+   .video-list-item .yt-uix-simple-thumb-wrap {margin-right:8px} 
+   
+   N., 23.03.2017:
+ • Apparently, exp-wn-big-thumbs might not exist any longer (march 2017 design 
+   change), which means, that three new selectors with another topmost selector 
+   had to be added; the latter being BODY.exp-search-big-thumbs.
+   Because topmost selectors at BODY might change from time to time, I might add 
+   instead a wildcard stringmatch selector for '-big-thumbs'.
+ • Added another one that affects the mix playlist thumb, and then set the 
+   width to !important.
+ • video-time: bottom: from 19px to 1px. */
 
 //SIDEBAR LINK (A)
 GM_addStyle("LI[class~=video-list-item] A {display:block; min-width:95px; padding-left:0px; padding-right:1px; padding-bottom:0px;}") 
@@ -604,7 +613,9 @@ GM_addStyle("@media only screen and (max-width:893px) {HTML:lang(en) > BODY.exp-
 /* 18.10.2016: Added HTML:lang(en) to accommodate the English-language UI.
    The alternative is HTML[lang=|"en"] ; The pipe is responsible for 
    hyphen-separated values beginning with en (en-us, etc).
-   This assumes, that en is actually used by default. */
+   This assumes, that en is actually used by default.
+ • 23.03.2017: The main selector might be affected by the 03.2017 design 
+   change. */
 //With en, viewport width is 871px, but add 22px (for some reason)
 
 GM_addStyle("@media only screen and (max-width:832px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {min-height:74px; width:136px;}}")
@@ -660,5 +671,6 @@ GM_addStyle("li[class~=child] {width:540px;}")
 GM_addStyle("div#comments-view .content {width:auto !important; min-width:460px;}")
 
 //FOOTER
-GM_addStyle("div#footer-container {width:auto !important; min-width:320px !important; max-with:1003px !important;}")
-GM_addStyle("div#footer, div#footer-container {width:auto !important; max-with:1003px !important;}")
+GM_addStyle("div#footer-container {width:auto !important; min-width:320px !important; max-width:1003px !important;}")
+GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:1003px !important;}")
+//N., 23.03.2017: Fixed width param syntax. Let's see.
