@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.4
+// @version 0.8.8.8.4.0
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -490,12 +490,12 @@ GM_addStyle("BODY.site-center-aligned #watch-sidebar-contents, DIV#watch7-sideba
 //GM_addStyle("div#watch7-sidebar .watch-sidebar-section {margin-left:0px;}") //Introduced 08.2014, commented out 22.11.2014
 
 //SIDEBAR ITEM
-GM_addStyle("LI[class~=video-list-item] {margin-bottom:7px; display:inline-block; width:calc(100% - 2px); border:solid 1px white; border-left:none; overflow-x:hidden;}") //original was 5px for both (was that margin-bottom?) //06.2014
+GM_addStyle("LI[class~=video-list-item] {margin-bottom:7px; display:inline-block; width:98%; border:solid 1px white; border-left:none; overflow-x:hidden;}") //original was 5px for both (was that margin-bottom?) //06.2014
 //02.2015.: set margin-bottom to 7px from 10px.
 //02.2015.: Strangely enough, the width cannot be set to 100%.
 //01.09.2016.: Set width to 98% to avoid the scollbar. But something is not quite right there.
 //06.10.2016.: +overflow-x to avoid an early (?) horizontal scrollbar.
-//15.04.2017.: Replaced 98% with calc
+//15.04.2017.: Replaced 98% with calc(100% - 2px), but then it didn't quite work out.
 
 //SIDEBAR ITEM/TEST: 02.2015.: This :before is for a specific SIDEBAR ITEM, mainly for testing.
 //GM_addStyle("div#watch7-sidebar-modules .autoplay-bar .watch-sidebar-head + div.watch-sidebar-body LI[class~=video-list-item]:before {content:\'---\'; display:block; font-size:0px; height:68px !important; width:120px; background-color:#409fff; float:left;}") //works
