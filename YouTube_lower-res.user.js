@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.2
+// @version 0.8.8.8.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -251,7 +251,8 @@ GM_addStyle("DIV#watch-appbar-playlist .playlist-videos-list .video-index {margi
 GM_addStyle("DIV#watch-appbar-playlist .playlist-video {height:auto; min-height:45px;}")
 
 //TRAY: PLAYLIST THUMBNAIL
-GM_addStyle("DIV#watch-appbar-playlist .playlist-video .video-thumb {margin-top:3px;}") //original:4px
+GM_addStyle("DIV#watch-appbar-playlist .playlist-video .video-thumb {margin-top:3px; background:none;}") //original:4px
+//15.04.2017: +no background to remove white borders
 
 //OLD, before 2014-04 GM_addStyle("OL#watch7-playlist-tray .video-list-item .ux-thumb-wrap {margin-top:2px; margin-bottom:4px;}") //works
 //span... margin-top can also be 3px
