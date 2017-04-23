@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.4.0
+// @version 0.8.8.8.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -509,6 +509,8 @@ GM_addStyle("LI[class~=video-list-item]:before {content:\'---\'; display:block; 
 //new size: 180px × 101px
 //new size for 08.2016: 168x94
 
+/* When the viewport width gets to less than 832px, make sidebar items' thumbnails 
+   smaller. There is a todo below the ruleset for future changes. */
 GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .thumb-wrapper, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb IMG, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG {width:136px !important; height:76px;}  SPAN.video-time {bottom:1px;} LI.related-list-item .video-time {right:1px;} }")
 /* Strangely, this (had) created a horizontal scrollbar only when logged in. */
 /* This line reduces video thumbnails' size in the sidebar, among other things. 
@@ -557,11 +559,16 @@ GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.
 //SIDEBAR VIDEO LINK VISITED COLOR
 GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
 
-//SIDE BAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR //K., 21.12.2016.
+//SIDEBAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR //K., 21.12.2016.
 GM_addStyle("SPAN.resume-playback-background {background-color:#222}") //was: 777; original: #eee
 GM_addStyle("SPAN.resume-playback-progress-bar {background-color:SlateBlue;}") //
 /* The progress bar for each visited video was introduced in late 2016, 
    around October, November, or December. */
+
+//SIDEBAR VIDEO KEYWORDS //First seen P., 23.04.2017
+GM_addStyle("SPAN.standalone-collection-badge-renderer-icon {margin:0px 0px 1px 0px; padding:0px 0px;}") //also uses yt-badge
+// 2px 0px 3px 0px
+//top|right|bottom|left
 
 //SIDEBAR VIDEO TITLES
 //Set video suggestions' titles as blocks, min-width:120px
@@ -569,10 +576,11 @@ GM_addStyle("UL.video-list .video-list-item .title {display:block; min-width:95p
 //originally set block min-width:120px (thumb width), but then lessened it to 60px
 //original max-height 2.4em
 
-GM_addStyle("UL.video-list .video-list-item .title, H3.yt-lockup-title A {font-size:100%; font-weight:600;") //BOLD links
+//SIDEBAR VIDEO LINKS set to BOLD
+GM_addStyle("UL.video-list .video-list-item .title, H3.yt-lockup-title A {font-size:100%; font-weight:600;")
 
 /*
-GM_addStyle("@media only screen and (max-width:1023px) {.frontBlock.frontBlock.frontType13 .frontLead,
+GM_addStyle("@media only screen and (max-width:1023px) {.frontBlock.frontBlock.frontType13 .frontLead, {} }")
 */
 
 //SIDEBAR ITEM & LINKS, THUMBNAILS //2015 start
@@ -594,8 +602,9 @@ GM_addStyle("LI.related-list-item .content-link {min-height:unset;}") //25.08.20
 
 GM_addStyle("LI[class~=related-list-item] .thumb-wrapper {top:0px; left:0px; margin-left:0px; margin-right:0px;}") //02.2015. margin-right is of little consequence
 
-//VIDEO LINK SETTING / RELATED LIST ITEM ACTION MENU BACKROUND set to white for better targeting
+//VIDEO LINK SETTING | THREE-POINT BUTTON | RELATED LIST ITEM ACTION MENU BACKROUND
 GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-color:rgba(255,255,255,0.85);}") //13.10.2016
+//set to white for better targeting
 
 //UNDO 'NOT INTERESTED'. Added 13.10.2016. | All this requires a logged-in state.
 GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}")
@@ -621,9 +630,10 @@ GM_addStyle("@media only screen and (max-width:893px) {HTML:lang(en) > BODY.exp-
    change. */
 //With en, viewport width is 871px, but add 22px (for some reason)
 
-GM_addStyle("@media only screen and (max-width:832px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {min-height:74px; width:136px;}}")
+GM_addStyle("@media only screen and (max-width:832px) {BODY.exp-wn-big-thumbs .service-endpoint-replace-enclosing-action-notification {min-height:74px; width:136px;} }")
 
 GM_addStyle("BODY.exp-wn-big-thumbs .replace-enclosing-action-message {padding-top:0px;}")
+//SIDEBAR END
 
 //normal mode (aligned) //Set margins here to put into the middle of the page
 GM_addStyle(".site-left-aligned #page.watch, .site-left-aligned #page.watch #guide, .site-left-aligned #watch7-playlist-container .watch7-playlist, .site-left-aligned #watch7-playlist, .site-left-aligned #watch7-video-container #watch7-video, div.site-left-aligned #watch7-main-container #watch7-main {margin-left:auto !important; margin-right:auto !important; padding-left:0px;}") //06.2014 //Padding-left  should be 0. Seems to work :-) 
