@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.5
+// @version 0.8.8.8.5.0
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -511,7 +511,7 @@ GM_addStyle("LI[class~=video-list-item]:before {content:\'---\'; display:block; 
 
 /* When the viewport width gets to less than 832px, make sidebar items' thumbnails 
    smaller. There is a todo below the ruleset for future changes. */
-GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .thumb-wrapper, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb IMG, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG {width:136px !important; height:76px;}  SPAN.video-time {bottom:1px;} LI.related-list-item .video-time {right:1px;} }")
+GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item]:before {content:\'---\'; height:76px !important; width:136px; margin-right:0px;}  BODY.exp-wn-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG, BODY.exp-wn-big-thumbs-v3 .related-list-item .thumb-wrapper, BODY.exp-wn-big-thumbs-v3 .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .thumb-wrapper, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb, BODY.exp-search-big-thumbs .related-list-item .yt-pl-thumb .yt-thumb IMG, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related, BODY.exp-search-big-thumbs .related-list-item .yt-uix-simple-thumb-related IMG {width:136px !important; height:76px;}  SPAN.video-time {bottom:1px;} LI.related-list-item .video-time {right:1px;} }")
 /* Strangely, this (had) created a horizontal scrollbar only when logged in. */
 /* This line reduces video thumbnails' size in the sidebar, among other things. 
 
@@ -528,7 +528,8 @@ GM_addStyle("@media only screen and (max-width:832px) {LI[class~=video-list-item
    instead a wildcard stringmatch selector for '-big-thumbs'.
  • Added another one that affects the mix playlist thumb, and then set the 
    width to !important.
- • video-time: bottom: from 19px to 1px. */
+ • video-time: bottom: from 19px to 1px. 
+ • video-list-item:before: +margin-right:0px */
 
 //SIDEBAR LINK (A)
 GM_addStyle("LI[class~=video-list-item] A {display:block; min-width:95px; padding-left:0px; padding-right:1px; padding-bottom:0px;}") 
