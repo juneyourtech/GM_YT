@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.0
+// @version 0.8.8.8.6.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -699,7 +699,7 @@ GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:
 window.setTimeout(function() {
    var embedFrame = document.createElement("iframe");
    embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
-   embedFrame.src = embedFrame.src + ("?showinfo=0"); //&autoplay=1
+   embedFrame.src = embedFrame.src + ("?showinfo=0");
    embedFrame.style = "width: 100%; height: 100%;";
    var player = document.getElementById("player-api");
    player.innerHTML = "";
@@ -707,3 +707,4 @@ window.setTimeout(function() {
    unsafeWindow.spf.dispose();
 },
 3000);
+ //next to showinfo: &autoplay=1
