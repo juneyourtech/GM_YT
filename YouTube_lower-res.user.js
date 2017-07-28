@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.5.0
+// @version 0.8.8.8.5.8
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -688,3 +688,14 @@ GM_addStyle("div#comments-view .content {width:auto !important; min-width:460px;
 GM_addStyle("div#footer-container {width:auto !important; min-width:320px !important; max-width:1003px !important;}")
 GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:1003px !important;}")
 //N., 23.03.2017: Fixed width param syntax. Let's see.
+
+//Code to enable Flash Player, with huge thanks to Alexander Nartov
+window.setTimeout(function() {
+   var embedFrame = document.createElement("iframe");
+   embedFrame.src = location.href.replace("watch?v=", "embed/");
+   embedFrame.style = "width: 100%; height: 100%;";
+   var player = document.getElementById("player-api");
+   player.innerHTML = "";
+   player.appendChild(embedFrame);
+},
+3000);
