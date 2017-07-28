@@ -254,7 +254,9 @@ GM_addStyle("DIV#watch-appbar-playlist .playlist-video {height:auto; min-height:
 GM_addStyle("DIV#watch-appbar-playlist .playlist-video .video-thumb {margin-top:3px; background:none;}") //original:4px
 //15.04.2017: +no background to remove white borders
 
-//OLD, before 2014-04 GM_addStyle("OL#watch7-playlist-tray .video-list-item .ux-thumb-wrap {margin-top:2px; margin-bottom:4px;}") //works
+/* OLD, before 2014-04:
+GM_addStyle("OL#watch7-playlist-tray .video-list-item .ux-thumb-wrap {margin-top:2px; margin-bottom:4px;}")
+*/ //works
 //span... margin-top can also be 3px
 
 //TRAY: PLAYLIST ITEM TITLE
@@ -360,7 +362,8 @@ GM_addStyle("div#watch8-secondary-actions {position:relative; left:0px; backgrou
 
 //BELOW TITLE: VIEWS COUNT and RATINGS
 
-//GM_addStyle("div#watch7-views-info {top:-96px; right:0px; height:29px;}") //Original -47px //was:-42px //march 2015: -95px
+//GM_addStyle("div#watch7-views-info {top:-96px; right:0px; height:29px;}")
+//Original: -47px //was:-42px //march 2015: -95px
 //right was 8px until changed to 0 on march 2015. Set height.
 
 GM_addStyle("div#watch8-sentiment-actions {position:absolute; top:-77px; right:0px;}") //June 2015
@@ -395,7 +398,8 @@ GM_addStyle("BUTTON.yt-uix-button-has-icon.no-icon-markup .yt-uix-button-content
 //GM_addStyle("span.like-button-renderer:before {content:\'---\'; display:block; font-size:0px; height:28px !important; width:88px; background-color:blue; clear:both;}")
 //March 2015, [the original] WORKS; background-color:blue; float:right;
 
-//GM_addStyle("span#watch-like-dislike-buttons {position:absolute; top:-65px; right:0px;}") //v.March 2015: WORKS; background-color:#99ccff;
+//GM_addStyle("span#watch-like-dislike-buttons {position:absolute; top:-65px; right:0px;}")
+//v.March 2015: WORKS; background-color:#99ccff;
 
 //COMMENTS
 GM_addStyle("DIV.all-comments, DIV.mj {background-color:inherit; color:black;}") //
@@ -451,7 +455,8 @@ GM_addStyle("SPAN.qualified-channel-title.ellipsized {display:inline;}")
 GM_addStyle("DIV.autoplay-bar .checkbox-on-off {position:absolute; display:block; top:0px; right:unset; left:0px; margin-left:0px; width:168px;}") //
 /* margin-left:52px was apparently added on 02.2015. 
    K., 21.12.2016:
-   Use these when appropriate: border-top:solid 1px Silver; border-right:solid 1px Silver; border-bottom:solid 1px Silver;
+   Use these when appropriate: 
+   border-top:solid 1px Silver; border-right:solid 1px Silver; border-bottom:solid 1px Silver;
 */
 
 //GM_addStyle("LABEL[for=\"autoplay-checkbox\"] {line-height:1.5em;}") //that is nitpicking, too.
@@ -689,7 +694,7 @@ GM_addStyle("div#footer-container {width:auto !important; min-width:320px !impor
 GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:1003px !important;}")
 //N., 23.03.2017: Fixed width param syntax. Let's see.
 
-//Code to enable Flash Player, with huge thanks to Alexander Nartov
+//28.07.2017: Code to enable Flash Player, with huge thanks to Alexander Nartov
 window.setTimeout(function() {
    var embedFrame = document.createElement("iframe");
    embedFrame.src = location.href.replace("watch?v=", "embed/");
