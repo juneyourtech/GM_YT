@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.1
+// @version 0.8.8.8.6.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -695,14 +695,26 @@ GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:
 //N., 23.03.2017: Fixed width param syntax. Let's see.
 
 /* 28.07.2017: Code to enable Flash Player, with huge thanks to Alexander Nartov 
-   for the bulk of the code, and Victor Desfe for the autoplay line. */
+   for the bulk of the code, and Victor Desfe for the showinfo/autoplay line.
+   Additional credits: JAOOTPYKHA for fixing height/width issues. 
+   • Errata: Make sure you have HTML5 switched off for this to work. */
 window.setTimeout(function() {
    var embedFrame = document.createElement("iframe");
    embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
    embedFrame.src = embedFrame.src + ("?showinfo=0");
    embedFrame.style = "width: 100%; height: 100%;";
    var player = document.getElementById("player-api");
+   
+   // grab the current dimensions of the player
+   var wid = player.clientWidth
+   var hei = player.clientHeight
+   
    player.innerHTML = "";
+   
+   // set the embedded player's dimensions to proper size
+   embedFrame.style.height=hei+'px';
+   embedFrame.style.width=wid+'px';
+   
    player.appendChild(embedFrame);
    unsafeWindow.spf.dispose();
 },
