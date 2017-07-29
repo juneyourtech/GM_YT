@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.2
+// @version 0.8.8.8.6.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -720,3 +720,6 @@ window.setTimeout(function() {
 },
 3000);
  //next to showinfo: &autoplay=1
+
+//29.07.2017: disable static in player area (resource-intensive)
+GM_addStyle("DIV.ytp-error CANVAS.ytp-tv-static {display:none;}")
