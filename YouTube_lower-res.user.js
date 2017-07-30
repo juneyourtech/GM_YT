@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.4
+// @version 0.8.8.8.6.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -698,3 +698,11 @@ GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:
 
 //29.07.2017: disable static in player area (resource-intensive)
 GM_addStyle("DIV.ytp-error CANVAS.ytp-tv-static {display:none;}")
+
+/* 30.07.2017: If you're looking for code that forces the Flash-based player, 
+   then I've moved it here:
+   https://github.com/juneyourtech/GM_YT/blob/master/uTube_force_Flash.user.js
+   
+   The installation link for the userscript is here:
+   https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
+*/
