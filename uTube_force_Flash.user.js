@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Force Flash
-// @namespace     YT_lowerres
+// @namespace     YT_flash_force
 // @description  Force Flash player embed
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.2
+// @version 0.2.1
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // ==/UserScript==
