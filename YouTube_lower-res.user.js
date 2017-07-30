@@ -292,7 +292,7 @@ margin-bottom: 3px (was:6px) */
 //#VIDEO: TITLE BELOW
 GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:0px; min-height:130px; background-color:inherit;}")
 
-GM_addStyle("DIV#watch-header:before {content:\'Notice: The Greasemonkey code forcing Flash was moved here: github.com\/juneyourtech\/GM_YT\/blob\/master\/uTube_force_Flash.user.js\'; display:inline-block; font-size:10pt; border:solid 1px Silver; padding:1px; margin:1px;}")
+GM_addStyle("DIV#watch-header:before {content:\'Notice: The Greasemonkey code forcing Flash was moved here: \\A github.com\/juneyourtech\/GM_YT\/raw\/master\/uTube_force_Flash.user.js \\A Sorry, though, that the text can't copied.\'; display:inline-block; font-size:10pt; border:solid 1px Silver; padding:1px; margin:1px;}")
 
 //TITLE
 GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:188px; position:relative;}")
