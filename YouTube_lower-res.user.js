@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Rez
 // @namespace     YT_lowerres
-// @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
+// @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now available here: github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.7
+// @version 0.8.8.8.6.8
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -292,7 +292,7 @@ margin-bottom: 3px (was:6px) */
 //#VIDEO: TITLE BELOW
 GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:0px; min-height:130px; background-color:inherit;}")
 
-GM_addStyle("DIV#watch-header:before {content:\'Notice: The Greasemonkey code forcing Flash was moved here: \\A github.com\/juneyourtech\/GM_YT\/raw\/master\/uTube_force_Flash.user.js \\A Sorry, though, that the URL can\\'t be copied.\'; display:inline-block; font-size:10pt; border:solid 1px Silver; padding:1px; margin:1px;}")
+GM_addStyle("DIV#watch-header:before {content:\'Notice: The Greasemonkey code forcing Flash has been moved into a new file. Check about:addons \\> User Scripts \\> uTube Rez description to copy its URL.\'; display:inline-block; font-size:10pt; border:solid 1px Silver; padding:1px; margin:1px;}")
 
 //TITLE
 GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:188px; position:relative;}")
