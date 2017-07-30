@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.)
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.3
+// @version 0.8.8.8.6.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -287,10 +287,12 @@ GM_addStyle("BUTTON.yt-uix-button-playlist-remove-item {margin-right:0px; margin
 //#VIDEO: NOTIFICATIONS //30.10.2016
 GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:3px;}")
 /* It seems, that these margins are pretty definite. I'm currently testing 
-margin-bottom: 3px (was:6px)*/
+margin-bottom: 3px (was:6px) */
 
 //#VIDEO: TITLE BELOW
 GM_addStyle("DIV#watch-header {padding-left:0px; padding-right:0px; padding-top:0px; min-height:130px; background-color:inherit;}")
+
+GM_addStyle("DIV#watch-header:before {content:\'Notice: The Greasemonkey code forcing Flash was moved here: github.com\/juneyourtech\/GM_YT\/blob\/master\/uTube_force_Flash.user.js\'; display:inline-block; font-size:10pt; border:solid 1px Silver; padding:1px; margin:1px;}")
 
 //TITLE
 GM_addStyle("DIV#watch7-headline, HTML.not-watch8 #watch-headline {padding-left:0px; padding-right:188px; position:relative;}")
@@ -693,33 +695,6 @@ GM_addStyle("div#comments-view .content {width:auto !important; min-width:460px;
 GM_addStyle("div#footer-container {width:auto !important; min-width:320px !important; max-width:1003px !important;}")
 GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:1003px !important;}")
 //N., 23.03.2017: Fixed width param syntax. Let's see.
-
-/* 28.07.2017: Code to enable Flash Player, with huge thanks to Alexander Nartov 
-   for the bulk of the code, and Victor Desfe for the showinfo/autoplay line.
-   Additional credits: JAOOTPYKHA for fixing height/width issues. 
-   • Errata: Make sure you have HTML5 switched off for this to work. */
-window.setTimeout(function() {
-   var embedFrame = document.createElement("iframe");
-   embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
-   embedFrame.src = embedFrame.src + ("?showinfo=0");
-   embedFrame.style = "width: 100%; height: 100%;";
-   var player = document.getElementById("player-api");
-   
-   // grab the current dimensions of the player
-   var wid = player.clientWidth
-   var hei = player.clientHeight
-   
-   player.innerHTML = "";
-   
-   // set the embedded player's dimensions to proper size
-   embedFrame.style.height=hei+'px';
-   embedFrame.style.width=wid+'px';
-   
-   player.appendChild(embedFrame);
-   unsafeWindow.spf.dispose();
-},
-3000);
- //next to showinfo: &autoplay=1
 
 //29.07.2017: disable static in player area (resource-intensive)
 GM_addStyle("DIV.ytp-error CANVAS.ytp-tv-static {display:none;}")
