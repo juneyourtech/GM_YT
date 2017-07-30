@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Force Flash
 // @namespace     YT_flash_force
-// @description  Force Flash player embed
+// @description  Force Flash player embed. Note, that the code might be buggy, and can cause conflicts with Flashblock.
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.2.1
+// @version 0.2.1.1
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // ==/UserScript==
