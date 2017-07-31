@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now available here: github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.6.8
+// @version 0.8.8.8.6.9
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -321,6 +321,12 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'], DIV#watch7-headlin
 
 GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.01em;}")
 /* 'rm' and 'rn' to make sure that the closeness of 'r' with either 'm' or 'n' won't cause people to misread it as a duble 'm' or 'n'. */
+
+//RIGHT-SIDE SUBSCRIBE BUTTON | Code added 31.07.2017
+GM_addStyle("SPAN.yt-subscribe-button-right {position:absolute; right:5px; bottom:-84px;}")
+//Removes the button from main text flow, and moves it below.
+
+GM_addStyle("SPAN.yt-material-subscribe-button .yt-uix-button.yt-uix-button-subscribe-branded, SPAN.yt-material-subscribe-button .yt-uix-button.yt-uix-button-subscribed-branded {padding-top:3px; padding-bottom:3px;}") //31.07.2017
 
 //LONG TITLE :after pseudo-element
 /* This shows if there's a long title. I need this to see if 
