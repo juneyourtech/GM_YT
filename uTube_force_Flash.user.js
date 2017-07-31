@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Force Flash
 // @namespace     YT_flash_force
-// @description  Force Flash player embed. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires, that HTML5 playback is switched off in about:config
+// @description  Force Flash player embed. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.2.2
+// @version 0.2.3
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -20,7 +20,7 @@
 window.setTimeout(function() {
    var embedFrame = document.createElement("iframe");
    embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
-   embedFrame.src = embedFrame.src + ("?showinfo=0");
+   embedFrame.src = embedFrame.src + ("?showinfo=0&autoplay=1");
    embedFrame.style = "width: 100%; height: 100%;";
    var player = document.getElementById("player-api");
    
