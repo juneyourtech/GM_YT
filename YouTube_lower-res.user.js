@@ -324,11 +324,18 @@ GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'], DIV#watch7-headlin
 GM_addStyle("DIV#watch7-headline h1 .long-title[TITLE*='rl'] {letter-spacing:-0.01em;}")
 /* 'rm' and 'rn' to make sure that the closeness of 'r' with either 'm' or 'n' won't cause people to misread it as a duble 'm' or 'n'. */
 
-//RIGHT-SIDE SUBSCRIBE BUTTON | Code added 31.07.2017
-GM_addStyle("SPAN.yt-subscribe-button-right {position:absolute; right:5px; bottom:-84px;}")
+//RIGHT-SIDE SUBSCRIBE BUTTON | +31.07.2017
+GM_addStyle("SPAN.yt-subscribe-button-right {position:absolute; right:5px; bottom:-84px; border:solid 1px rgba(229,33,23,0.5);}")
 //Removes the button from main text flow, and moves it below.
 
-GM_addStyle("SPAN.yt-material-subscribe-button .yt-uix-button.yt-uix-button-subscribe-branded, SPAN.yt-material-subscribe-button .yt-uix-button.yt-uix-button-subscribed-branded {padding-top:3px; padding-bottom:3px;}") //31.07.2017
+GM_addStyle("SPAN.yt-material-subscribe-button .yt-uix-button.yt-uix-button-subscribe-branded, SPAN.yt-material-subscribe-button .yt-uix-button.yt-uix-button-subscribed-branded {padding-top:3px; padding-bottom:3px; background-color:transparent;}") //31.07.2017
+
+//TELLI/SUBSCRIBE | 31.07.2017
+GM_addStyle("BUTTON.yt-uix-button-subscribe-branded .subscribe-label {color:rgba(229,33,23,0.7);}")
+GM_addStyle("BUTTON.yt-uix-button-subscribe-branded .subscribe-label:after {content:\':\'; display:inline; color:rgba(229,33,23,0.7);}")
+
+//SUBSCRIBER COUNT | 31.07.2017
+GM_addStyle("BODY.exp-responsive #content .yt-material-subscribe-button.yt-uix-button-subscription-container .yt-subscriber-count {color:#434343;}")
 
 //LONG TITLE :after pseudo-element
 /* This shows if there's a long title. I need this to see if 
