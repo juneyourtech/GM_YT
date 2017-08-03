@@ -4,7 +4,7 @@
 // @description  Force Flash player embed. Video settings available from the User Script Commands submenu. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the initial code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @author JuneYourTech | github.com/juneyourtech | and contributors
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.3.2
+// @version 0.3.3
 // @encoding utf-8
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
@@ -71,7 +71,14 @@ function autoplay_off() {
 
 window.setTimeout(function() {
    var embedFrame = document.createElement("iframe");
-   embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
+   
+   embedFrame.src = location.href.replace(/watch\?(?:.*)v=([A-Za-z0-9_-]{11}).*/, "embed/$1");
+/* The first inner parentheses group is a non-capturing group, and is not included in '$1'.
+   The first group is in place to match stringdata after '\?' and before 'v=', if there is any.
+ • The second parentheses group _is_ a capturing group, and remembers the captured data into '$1',
+   which is then included after 'embed/'. It captures 11 alphanumeric characters, including 
+   an underscore and a dash.   
+   */
    
    embedFrame.src = embedFrame.src + ('?showinfo=0&autoplay='+GM_getValue('autoplay','1')+'&vq='+GM_getValue('video_quality','default'));
    //GM_getValue here has two parameter values: 
