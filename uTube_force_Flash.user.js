@@ -3,7 +3,7 @@
 // @namespace     YT_flash_force
 // @description  Force Flash player embed. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.2.3
+// @version 0.2.4
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -37,7 +37,7 @@ window.setTimeout(function() {
    player.appendChild(embedFrame);
    unsafeWindow.spf.dispose();
 },
-3000);
+1000);
  //next to showinfo: &autoplay=1
 
 //29.07.2017: disable static in player area (somewhat resource-intensive)
