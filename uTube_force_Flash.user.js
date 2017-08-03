@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Force Flash
 // @namespace     YT_flash_force
-// @description  Force Flash player embed. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
+// @description  Force Flash player embed. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the initial code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.2.4
+// @version 0.3.0
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -17,10 +17,57 @@
    Additional credits: JAOOTPYKHA for fixing height/width issues. 
    • Errata: Make sure you have HTML5 switched off for this to work. */
 
+/* Menu commands, autoplay and video quality settings added on 03.08.2017. */
+GM_registerMenuCommand('240p', vid_quality_small);
+GM_registerMenuCommand('360p', vid_quality_medium);
+GM_registerMenuCommand('480p', vid_quality_large);
+GM_registerMenuCommand('720p', vid_quality_hd);
+GM_registerMenuCommand('1080p', vid_quality_fullhd);
+GM_registerMenuCommand('High Res', vid_quality_highres);
+GM_registerMenuCommand('Default quality', vid_quality_default);
+GM_registerMenuCommand('Autoplay ON', autoplay_on);
+GM_registerMenuCommand('Autoplay OFF', autoplay_off);
+
+function vid_quality_small() {
+   GM_setValue("video_quality", "small");
+   }; //240p
+
+function vid_quality_medium() {
+   GM_setValue("video_quality", "medium");
+   }; //360p
+
+function vid_quality_large() {
+   GM_setValue("video_quality", "large");
+   }; //480p
+
+function vid_quality_hd() {
+   GM_setValue("video_quality", "hd720");
+   }; //HD/720p
+
+function vid_quality_fullhd() {
+   GM_setValue("video_quality", "hd1080");
+   }; //FullHD/1080p
+
+function vid_quality_highres() {
+   GM_setValue("video_quality", "highres");
+   }; //High resolution / greater than 1080p
+
+function vid_quality_default() {
+   GM_setValue("video_quality", "default");
+   };
+
+function autoplay_on() {
+   GM_setValue("autoplay", "1");
+   };
+
+function autoplay_off() {
+   GM_setValue("autoplay", "0");
+   };
+
 window.setTimeout(function() {
    var embedFrame = document.createElement("iframe");
    embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
-   embedFrame.src = embedFrame.src + ("?showinfo=0&autoplay=1");
+   embedFrame.src = embedFrame.src + ('?showinfo=0&autoplay='+GM_getValue('autoplay','1')+'&vq='+GM_getValue('video_quality','default'));
    embedFrame.style = "width: 100%; height: 100%;";
    var player = document.getElementById("player-api");
    
@@ -38,7 +85,9 @@ window.setTimeout(function() {
    unsafeWindow.spf.dispose();
 },
 1000);
- //next to showinfo: &autoplay=1
+/* Apparently, setTimeout sets a delay until the function loads.
+   1000 = 1 second
+   3000 = 3 seconds, etc. */
 
 //29.07.2017: disable static in player area (somewhat resource-intensive)
 GM_addStyle("DIV.ytp-error CANVAS.ytp-tv-static {display:none;}");
