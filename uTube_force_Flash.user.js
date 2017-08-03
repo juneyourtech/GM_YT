@@ -3,7 +3,7 @@
 // @namespace     YT_flash_force
 // @description  Force Flash player embed. Video settings available from the User Script Commands submenu. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the initial code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version 0.3.1.1
+// @version 0.3.1.2
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // @grant         GM_getValue
@@ -72,8 +72,8 @@ window.setTimeout(function() {
    embedFrame.src = location.href.replace(/watch\?v=([^&]*).*/, "embed/$1");
    
    embedFrame.src = embedFrame.src + ('?showinfo=0&autoplay='+GM_getValue('autoplay','1')+'&vq='+GM_getValue('video_quality','default'));
-   //GM_getValue here has two parameters: 
-   //get parameter from storage, if none exists, uses second parameter
+   //GM_getValue here has two parameter values: 
+   //get value from storage, if none exists, uses second one
    
    embedFrame.style = "width: 100%; height: 100%;";
    var player = document.getElementById("player-api");
