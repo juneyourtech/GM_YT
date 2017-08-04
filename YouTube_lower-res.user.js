@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name          uTube Rez
 // @namespace     YT_lowerres
-// @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now available here: github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
+// @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.1
+// @version 0.8.8.8.7.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
