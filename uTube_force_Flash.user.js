@@ -3,8 +3,9 @@
 // @namespace     YT_flash_force
 // @description   Force Flash player embed. Video settings available from the User Script Commands submenu. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the initial code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @author        JuneYourTech | github.com/juneyourtech | and contributors
-// @updateURL     https://github.com/juneyourtech/GM_YT/raw/master/uTube_force_Flash.user.js
-// @version       0.3.3.1
+// @updateURL     https://raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
+// @downloadURL   https://raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
+// @version       0.3.3.2
 // @encoding      utf-8
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
