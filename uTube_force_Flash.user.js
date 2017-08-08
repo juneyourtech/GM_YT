@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name          uTube Force Flash (Update required)
 // @namespace     YT_flash_force
-// @description   Force Flash player embed. Please update: This file's download location has been updated to a new URL, as v0.3.3.x and older versions are in a file that is to be deprecated. Video settings available from the User Script Commands submenu. Note, that the code might be buggy, and might cause conflicts with Flashblock. Acknowledgements to Alexander Nartov for providing the initial code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
+// @description   Force Flash player embed. Please update: New versions of the userscript are in a new place. This, v0.3.3.x and older are in a file that is to be deprecated; code in the 0.3.3.x branch is unmaintained, might be buggy, and can cause conflicts with Flashblock. | Support inquiries should be opened here: github.com/juneyourtech/GM_YT_Flash/issues | Acknowledgements to Alexander Nartov for providing the initial code, and to Victor Desfe and JAOOTPYKHA for improvements to it. This userscript requires that HTML5 playback be switched off in about:config
 // @author        JuneYourTech | github.com/juneyourtech | and contributors
 // @updateURL     https://raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @downloadURL   https://raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
-// @version       0.3.3.4.1
+// @version       0.3.3.4.2
 // @encoding      utf-8
+// @homepage      https://github.com/juneyourtech/GM_YT_Flash
+// @supportURL    https://github.com/juneyourtech/GM_YT_Flash/issues
 // @include       *.youtube.com/watch*
 // @grant         GM_addStyle
 // @grant         GM_getValue
