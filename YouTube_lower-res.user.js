@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.2
+// @version 0.8.8.8.7.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -372,8 +372,12 @@ GM_addStyle("DIV#watch7-user-header {padding-bottom:0px; background:linear-gradi
 GM_addStyle("DIV#watch-header .yt-user-info {padding-bottom:0px; margin-left:53px}")
 //L., 17.12.2016: +margin-left, original: 58px
 
-//The RED SUBSCRIBE BUTTON //Code added on L., 17.12.2016.
+//The left-side RED SUBSCRIBE BUTTON //Code added on L., 17.12.2016.
 GM_addStyle("SPAN#watch7-subscription-container {margin-left:5px}")
+
+//03.09.2017 | Subscribe button (branded)
+GM_addStyle("BODY.exp-invert-logo .yt-uix-button-subscribe-branded {background-color:transparent; border:solid 1px transparent; border-image:linear-gradient(to right, rgba(204, 24, 30,0.7) 0%, #cccccc 100%) 1 1 1 1; borer-image-slice:1;}")
+//rgb(240,24,30) = #CC181E
 
 //BELOW TITLE: ACTION BUTTONS
 GM_addStyle("div#watch8-secondary-actions {position:relative; left:0px; background:linear-gradient(to bottom, white 50%, transparent 100%);}")
@@ -585,9 +589,10 @@ GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !impor
 
 //SIDEBAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR //K., 21.12.2016.
 GM_addStyle("SPAN.resume-playback-background {background-color:#222}") //was: 777; original: #eee
-GM_addStyle("SPAN.resume-playback-progress-bar {background-color:SlateBlue;}") //
+GM_addStyle("BODY.exp-invert-logo SPAN.resume-playback-progress-bar {background-color:SlateBlue;}") //
 /* The progress bar for each visited video was introduced in late 2016, 
-   around October, November, or December. */
+   around October, November, or December.
+   Color change in late August / September 2017. Set back on 03.09.2017. */
 
 //SIDEBAR VIDEO KEYWORDS //First seen P., 23.04.2017
 GM_addStyle("SPAN.standalone-collection-badge-renderer-icon {margin:0px 0px 1px 0px; padding:0px 0px;}") //also uses yt-badge
