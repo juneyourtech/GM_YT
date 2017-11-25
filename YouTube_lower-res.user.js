@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.3
+// @version 0.8.8.8.7.4
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -630,6 +630,10 @@ GM_addStyle("BODY[class~=exp-wn-big-thumbs] .related-list-item .content-link {mi
 GM_addStyle("LI.related-list-item .content-link {min-height:unset;}") //25.08.2016
 
 GM_addStyle("LI[class~=related-list-item] .thumb-wrapper {top:0px; left:0px; margin-left:0px; margin-right:0px;}") //02.2015. margin-right is of little consequence
+
+//VIDEO LINK SETTING | THREE-POINT BUTTON | RELATED LIST ITEM ACTION MENU
+GM_addStyle("LI.related-list-item .related-item-action-menu {min-width:10px; min-height:16px;}") //26.11.2017
+//Original: width:9px (computed); height:16px (computed)
 
 //VIDEO LINK SETTING | THREE-POINT BUTTON | RELATED LIST ITEM ACTION MENU BACKROUND
 GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-color:rgba(255,255,255,0.85);}") //13.10.2016
