@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5.3
+// @version 0.8.8.8.7.5.5
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -62,7 +62,7 @@ GM_addStyle("DIV#appbar-main-guide-notification-container {top:0px; left:201px;}
 
 //ALERTS //15.11.2016
 GM_addStyle("DIV[class*=\'home\'] DIV.alerts-wrapper {margin-top:18px;}")
-/* Let's see how it works. 
+/* Let's see how it works. | testing
    16.11.2016: Set it to work on frontpage only, with DIV.home. */
 
 GM_addStyle("DIV#alerts {width:auto !important; min-width:480px !important; max-width:988px !important;}") //older code
@@ -93,7 +93,7 @@ GM_addStyle("DIV#guide-main .guide-module-toggle-arrow {left:-11px; top:32px !im
 //GUIDE ITSELF //before 09.2013 redesign
 GM_addStyle("BODY.site-left-aligned #page.watch #guide-container {margin-right:0px; top:0px; left:0px; padding-left:0px; width:170px; padding-top:2px;}") //experimental, has effect
 
-GM_addStyle("DIV.guide-module#watch-context-container {margin-bottom:0px;}") //tv thingy, let's see if it works
+GM_addStyle("DIV.guide-module#watch-context-container {margin-bottom:0px;}") //tv thingy, let's see if it works | testing
 
 GM_addStyle("div#watch-context-container .guide-module-toggle-icon {margin-top:-56px; left:61px}")
 
@@ -285,6 +285,10 @@ GM_addStyle("BUTTON.yt-uix-button-playlist-remove-item {margin-right:0px; margin
 • possible background:linear-gradient(to left, rgb(128, 0, 0) 0%, transparent 100%) — maroon to transparent
 • linear-gradient(to left, rgb(0, 0, 0) 0%, transparent 100%) — IN USE */
 //GM_addStyle(" ")
+
+//VIDEO: SPINNER //26.11.2017.
+GM_addStyle("DIV.ytp-spinner > DIV > .ytp-spinner-container {display:none;}")
+GM_addStyle("DIV.ytp-spinner:before {content:\'Just a friendly spinner replacement...\'; display:inline;}")
 
 //#VIDEO: NOTIFICATIONS //30.10.2016
 GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:3px;}")
@@ -646,7 +650,7 @@ GM_addStyle("DIV.related-item-dismissable .related-item-action-menu .yt-uix-butt
 /* Original width appears to be 10px. The 13px width is required to accommodate the 
    width of a :before pseudoelement that is 13px wide, and has caused issues with 
    horizontal scrollbars, when li.video-list-item width is set to 100% from 98%, which 
-   was a compromise measure. Let's see how it works. */
+   was a compromise measure. Let's see how it works. | testing */
 
 //UNDO 'NOT INTERESTED'. Added 13.10.2016. | All this requires a logged-in state.
 GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}")
@@ -728,7 +732,7 @@ GM_addStyle("div#comments-view .content {width:auto !important; min-width:460px;
 //FOOTER
 GM_addStyle("div#footer-container {width:auto !important; min-width:320px !important; max-width:1003px !important;}")
 GM_addStyle("div#footer, div#footer-container {width:auto !important; max-width:1003px !important;}")
-//N., 23.03.2017: Fixed width param syntax. Let's see.
+//N., 23.03.2017: Fixed width param syntax. Let's see. | testing
 
 //29.07.2017: disable static in player area (resource-intensive)
 GM_addStyle("DIV.ytp-error CANVAS.ytp-tv-static {display:none;}")
