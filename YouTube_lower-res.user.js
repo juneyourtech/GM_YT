@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5.2
+// @version 0.8.8.8.7.5.3
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -642,7 +642,11 @@ GM_addStyle("LI.related-list-item .related-item-action-menu:hover {background-co
 //set to white for better targeting
 
 //VIDEO LINK SETTING | THREE-POINT BUTTON | RELATED LIST ITEM ACTION MENU LINK (BUTTON)
-GM_addStyle("DIV.related-item-dismissable .related-item-action-menu .yt-uix-button {margin-top:-4px; margin-right:0px; height:15px; width:10px;}") //26.11.2017
+GM_addStyle("DIV.related-item-dismissable .related-item-action-menu .yt-uix-button {margin-top:-4px; margin-right:0px; height:15px; width:13px;}") //26.11.2017
+/* Original width appears to be 10px. The 13px width is required to accommodate the 
+   width of a :before pseudoelement that is 13px wide, and has caused issues with 
+   horizontal scrollbars, when li.video-list-item width is set to 100% from 98%, which 
+   was a compromise measure. Let's see how it works. */
 
 //UNDO 'NOT INTERESTED'. Added 13.10.2016. | All this requires a logged-in state.
 GM_addStyle("DIV.related-item-dismissed-container {position:absolute; right:0px; width:100%;}")
