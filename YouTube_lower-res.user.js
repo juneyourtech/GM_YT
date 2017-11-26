@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5
+// @version 0.8.8.8.7.5.1
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -587,12 +587,13 @@ GM_addStyle("BODY[class~=exp-searchbox-redesign] LI[class~=video-list-item] > A.
 //SIDEBAR VIDEO LINK VISITED COLOR
 GM_addStyle("LI[class~=video-list-item] A:visited .title {color:SlateBlue !important; background-color:gray;}") //Underlining and background color don't seem to work. //06.2014 //was video-lis-item
 
-//SIDEBAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR //K., 21.12.2016.
+//SIDEBAR VIDEO LINK WATCHED VIDEO PLAYBACK PROGRESS BAR | purple //K., 21.12.2016.
 GM_addStyle("SPAN.resume-playback-background {background-color:#222}") //was: 777; original: #eee
-GM_addStyle("BODY.exp-invert-logo SPAN.resume-playback-progress-bar {background-color:SlateBlue;}") //
+GM_addStyle("BODY.exp-invert-logo SPAN.resume-playback-progress-bar {background-color:SlateBlue; width:100% !important;}") //
 /* The progress bar for each visited video was introduced in late 2016, 
    around October, November, or December.
-   Color change in late August / September 2017. Set back on 03.09.2017. */
+   Color change in late August / September 2017. Set back on 03.09.2017.
+   26.11.2017: +width. */
 
 //SIDEBAR VIDEO KEYWORDS //First seen P., 23.04.2017
 GM_addStyle("SPAN.standalone-collection-badge-renderer-icon {margin:0px 0px 1px 0px; padding:0px 0px;}") //also uses yt-badge
