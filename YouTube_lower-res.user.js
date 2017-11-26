@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5.1
+// @version 0.8.8.8.7.5.2
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -602,9 +602,10 @@ GM_addStyle("SPAN.standalone-collection-badge-renderer-icon {margin:0px 0px 1px 
 
 //SIDEBAR VIDEO TITLES
 //Set video suggestions' titles as blocks, min-width:120px
-GM_addStyle("UL.video-list .video-list-item .title {display:block; min-width:95px; max-height:2.45em; hyphenate-character:\'\\002D\'; line-height:1.17em;}") //06.2014 //\'LONG TITLE \\2010\'
+GM_addStyle("UL.video-list .video-list-item .title {display:block; min-width:95px; max-height:2.45em; hyphenate-character:\'\\002D\'; line-height:1.17em; margin-right:0px;}") //06.2014 //\'LONG TITLE \\2010\'
 //originally set block min-width:120px (thumb width), but then lessened it to 60px
-//original max-height 2.4em
+//original max-height:2.4em
+//26.11.2017: +margin-right. original: 15px.
 
 //SIDEBAR VIDEO LINKS set to BOLD
 GM_addStyle("UL.video-list .video-list-item .title, H3.yt-lockup-title A {font-size:100%; font-weight:600;")
