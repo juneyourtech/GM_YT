@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5.6
+// @version 0.8.8.8.7.5.7
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -25,7 +25,7 @@
 //GM_addStyle("HTML BODY.exp-roboto, HTML .exp-roboto button, HTML .exp-roboto input, HTML .exp-roboto textarea, HTML .exp-roboto select {font-family:Arial,sans-serif; }") //
 
 //26.11.2017
-GM_addStyle("HTML > BODY, HTML > BODY > #body-container {min-height:unset;}")
+GM_addStyle("HTML > BODY, HTML > BODY > #body-container {min-height:unset !important;}")
 //This fixes one of the excessive height issues.
 
 GM_addStyle("HTML > BODY.kevlar-homepage {background-color:#F1F1F1;}")
