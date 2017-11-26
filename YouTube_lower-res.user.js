@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5.5
+// @version 0.8.8.8.7.5.6
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -21,8 +21,12 @@
 // R., 13.09.2013 or somesuch, updated via secondary location
 // Major update to accommodate 01.2015 design.
 
-//BODY, FONTS
+//BODY, HEIGHT, FONTS
 //GM_addStyle("HTML BODY.exp-roboto, HTML .exp-roboto button, HTML .exp-roboto input, HTML .exp-roboto textarea, HTML .exp-roboto select {font-family:Arial,sans-serif; }") //
+
+//26.11.2017
+GM_addStyle("HTML > BODY, HTML > BODY > #body-container {min-height:unset;}")
+//This fixes one of the excessive height issues.
 
 GM_addStyle("HTML > BODY.kevlar-homepage {background-color:#F1F1F1;}")
 
@@ -120,10 +124,13 @@ GM_addStyle("div.watch7-playlist, div#watch7-video-container, div#watch7-video, 
 //This is ostensibly when the guide is collapsed...
 //Commented out on 06.10.2016.
 
-GM_addStyle("div#player, div#watch7-main, BODY.site-center-aligned #content, BODY.site-center-aligned .watch #content.content-alignment {width:auto; min-width:784px; max-width:1003px;}")
-/* applies well when expanded, so from 780px to 640px... was 780, then 769, then 766 px by 21.12.2014. */
-//it was 150px for some reason; then min-width:926px;
-//06.10.2016: Was 766px (seemed to work really well before the implementation of larger thumbnails). Now set to 784px.
+//26.11.2017: TODO: MERGE
+GM_addStyle("DIV#player, DIV#watch7-main, BODY.site-center-aligned #content, BODY.site-center-aligned .watch #content.content-alignment {width:auto; min-width:784px; max-width:1003px;}")
+/* applies well when expanded, so from 780px to 640px... was 780, then 769, 
+   then 766 px by 21.12.2014. */
+/* it was 150px for some reason; then min-width:926px; */
+/* 06.10.2016: Was 766px (seemed to work really well before the implementation 
+   of larger thumbnails). Now set to 784px. */
 
 GM_addStyle("BODY.site-center-aligned #player, BODY.site-center-aligned .watch #content.content-alignment, BODY.site-center-aligned #player.watch-small {width:auto; min-width:784px; max-width:1003px; margin-left:auto; margin-right:auto; background-color:inherit;}")
 /* Note, that min-width 838px is good for playlist; don't know about player yet, 
