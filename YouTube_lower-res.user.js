@@ -298,9 +298,12 @@ GM_addStyle("DIV.ytp-spinner > DIV > .ytp-spinner-container {display:none;}")
 GM_addStyle("DIV.ytp-spinner:before {content:\'Just a friendly spinner replacement...\'; display:inline;}")
 
 /* #VIDEO: STUPID OVERLAYS NEAR END OF THE VIDEO, which, like, no-one ever asked 
-   for. Will display upon video hover. Added 27.11.2017. */
-GM_addStyle("DIV.ytp-ce-element.ytp-ce-element-show {opacity:0; visibility:hidden;}")
-GM_addStyle("DIV#movie_player:hover DIV.ytp-ce-element.ytp-ce-element-show {opacity:1; visibility:visible;}")
+   for. Will display upon video hover. Gecko browsers only. Added 27.11.2017. */
+GM_addStyle("BODY.gecko DIV.ytp-ce-element.ytp-ce-element-show {opacity:0; visibility:hidden;}")
+GM_addStyle("BODY.gecko DIV#movie_player:hover DIV.ytp-ce-element.ytp-ce-element-show {opacity:1; visibility:visible;}")
+/* While I did consider BODY.yt-user-logged-in , then I chose not to use it, as some 
+   people prefer to watch videos when not logged in at all, or watch certain videos 
+   like that. */
 
 //#VIDEO: NOTIFICATIONS //30.10.2016
 GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:3px;}")
