@@ -3,7 +3,7 @@
 // @namespace     YT_lowerres
 // @description  Site layout improvements for smaller-resolution displays, such as 1024x768 and 800x600 px. This primarily affects the player part. (All trademarks are belong to their respective owners.) The userscript that forces Flash over HTML5 is now in a new location: raw.githubusercontent.com/juneyourtech/GM_YT_Flash/master/uTube_force_Flash.user.js
 // @updateURL https://github.com/juneyourtech/GM_YT/raw/master/YouTube_lower-res.user.js
-// @version 0.8.8.8.7.5.7
+// @version 0.8.8.8.7.5.8
 // @include       *.youtube.com/*
 // @grant         GM_addStyle
 // ==/UserScript==
@@ -296,6 +296,11 @@ GM_addStyle("BUTTON.yt-uix-button-playlist-remove-item {margin-right:0px; margin
 //VIDEO: SPINNER //26.11.2017.
 GM_addStyle("DIV.ytp-spinner > DIV > .ytp-spinner-container {display:none;}")
 GM_addStyle("DIV.ytp-spinner:before {content:\'Just a friendly spinner replacement...\'; display:inline;}")
+
+/* #VIDEO: STUPID OVERLAYS NEAR END OF THE VIDEO, which, like, no-one ever asked 
+   for. Will display upon video hover. Added 27.11.2017. */
+GM_addStyle("DIV.ytp-ce-element.ytp-ce-element-show {opacity:0; visibility:hidden;}")
+GM_addStyle("DIV#movie_player:hover DIV.ytp-ce-element.ytp-ce-element-show {opacity:1; visibility:visible;}")
 
 //#VIDEO: NOTIFICATIONS //30.10.2016
 GM_addStyle("DIV#watch7-speedyg-area {margin-top:-9px; margin-bottom:3px;}")
